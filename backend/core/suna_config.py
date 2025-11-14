@@ -1,9 +1,9 @@
 from core.prompts.prompt import SYSTEM_PROMPT
 
-# Suna default configuration - simplified and centralized
+# ChromaFlow Agent default configuration - simplified and centralized
 SUNA_CONFIG = {
-    "name": "Suna",
-    "description": "Suna is your AI assistant with access to various tools and integrations to help you with tasks across domains.",
+    "name": "ChromaFlow Agent",
+    "description": "ChromaFlow Agent is your AI assistant with access to various tools and integrations to help you with tasks across domains.",
     "model": "claude-sonnet-4.5",
     "system_prompt": SYSTEM_PROMPT,
     "configured_mcps": [],

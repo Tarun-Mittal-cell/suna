@@ -1,7 +1,7 @@
 export const siteConfig = {
-  name: 'Kortix Suna',
-  url: 'https://suna.so/',
-  description: 'Kortix AI',
+  name: 'ChromaFlow Agent',
+  url: 'https://chromaflow.ai/',
+  description: 'ChromaFlow Agent - Enterprise AI Agent Platform',
   links: {
     twitter: 'https://x.com/kortixai',
     github: 'https://github.com/kortix-ai/',

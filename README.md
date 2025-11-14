@@ -28,10 +28,10 @@ Kortix is a comprehensive open source platform that empowers you to build, manag
 
 ## 🌟 What Makes Kortix Special
 
-### 🤖 Includes Suna – Flagship Generalist AI Worker
-Meet Suna, our showcase agent that demonstrates the full power of the Kortix platform. Through natural conversation, Suna handles research, data analysis, browser automation, file management, and complex workflows – showing you what's possible when you build with Kortix.
+### 🤖 Includes ChromaFlow Agent – Flagship Generalist AI Worker
+Meet ChromaFlow Agent, our showcase agent that demonstrates the full power of the Kortix platform. Through natural conversation, ChromaFlow Agent handles research, data analysis, browser automation, file management, and complex workflows – showing you what's possible when you build with Kortix.
 
-### 🔧 Build Custom Suna-Type Agents
+### 🔧 Build Custom ChromaFlow Agent-Type Agents
 Create your own specialized agents tailored to specific domains, workflows, or business needs. Whether you need agents for customer service, data processing, content creation, or industry-specific tasks, Kortix provides the infrastructure and tools to build, deploy, and scale them.
 
 ### 🚀 Complete Platform Capabilities
@@ -54,9 +54,9 @@ Create your own specialized agents tailored to specific domains, workflows, or b
 
 ## 🎯 Agent Examples & Use Cases
 
-### Suna - Your Generalist AI Worker
+### ChromaFlow Agent - Your Generalist AI Worker
 
-Suna demonstrates the full capabilities of the Kortix platform as a versatile AI worker that can:
+ChromaFlow Agent demonstrates the full capabilities of the Kortix platform as a versatile AI worker that can:
 
 **🔍 Research & Analysis**
 - Conduct comprehensive web research across multiple sources
@@ -163,7 +163,7 @@ The wizard will guide you through 14 steps with progress saving, so you can resu
 python start.py
 ```
 
-That's it! Your Kortix platform will be running with Suna ready to assist you.
+That's it! Your Kortix platform will be running with ChromaFlow Agent ready to assist you.
 
 ## 🏠 Self-Hosting
 

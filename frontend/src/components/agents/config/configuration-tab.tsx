@@ -92,7 +92,7 @@ export function ConfigurationTab({
   const handleSystemPromptChange = (value: string) => {
     if (!isSystemPromptEditable && isSunaAgent) {
       toast.error("System prompt cannot be edited", {
-        description: "Suna's system prompt is managed centrally and cannot be changed.",
+        description: "ChromaFlow Agent's system prompt is managed centrally and cannot be changed.",
       });
       return;
     }
@@ -106,7 +106,7 @@ export function ConfigurationTab({
   const handleToolsChange = (tools: Record<string, boolean | { enabled: boolean; description: string }>) => {
     if (!areToolsEditable && isSunaAgent) {
       toast.error("Tools cannot be modified", {
-        description: "Suna's default tools are managed centrally and cannot be changed.",
+        description: "ChromaFlow Agent's default tools are managed centrally and cannot be changed.",
       });
       return;
     }
@@ -128,10 +128,10 @@ export function ConfigurationTab({
                 <div className="text-primary-600">
                   <KortixLogo size={20} />
                 </div>
-                <span className="font-semibold text-primary-800">Suna Default Agent</span>
+                <span className="font-semibold text-primary-800">ChromaFlow Default Agent</span>
               </div>
               <p className="text-sm text-primary-700">
-                This is Suna's default agent with centrally managed system prompt and tools.
+                This is ChromaFlow Agent's default agent with centrally managed system prompt and tools.
                 You can customize integrations, knowledge base, and triggers to personalize your experience.
               </p>
             </div>
