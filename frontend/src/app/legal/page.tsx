@@ -136,7 +136,7 @@ function LegalContent() {
               </div>
             </div>
 
-            <div className="rounded-xl border border-border bg-[#F3F4F6] dark:bg-[#F9FAFB]/[0.02] p-8 shadow-sm">
+            <div className="rounded-xl border border-border bg-card p-8 shadow-sm">
               <div className="prose prose-sm max-w-none dark:prose-invert">
                 {activeTab === 'terms' ? (
                   <div>
