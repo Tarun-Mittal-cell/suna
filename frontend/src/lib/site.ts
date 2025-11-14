@@ -1,7 +1,7 @@
 export const siteConfig = {
-  name: 'ChromaFlow Agent',
+  name: 'ChromaFlow by Octave-X',
   url: 'https://chromaflow.ai/',
-  description: 'ChromaFlow Agent - Enterprise AI Agent Platform',
+  description: 'ChromaFlow by Octave-X - Enterprise AI Agent Platform',
   links: {
     twitter: 'https://x.com/chromaflowai',
     github: 'https://github.com/chromaflow-ai/',
