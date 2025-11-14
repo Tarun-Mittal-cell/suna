@@ -148,7 +148,7 @@ Get your ChromaFlow platform running in minutes with our automated setup wizard:
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/chromaflow-ai/suna.git
+git clone https://github.com/Tarun-Mittal-cell/suna.git
 cd suna
 ```
 
