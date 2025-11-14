@@ -24,7 +24,7 @@ import {
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
 import { cn } from '@/lib/utils';
-import { KortixLogo } from '@/components/sidebar/kortix-logo';
+import { ChromaFlowLogo } from '@/components/sidebar/chromaflow-logo';
 import { AgentAvatar } from '@/components/thread/content/agent-avatar';
 
 // Unified agent card variants
@@ -56,7 +56,7 @@ export interface BaseAgentData {
   // Marketplace specific
   creator_id?: string;
   creator_name?: string;
-  is_kortix_team?: boolean;
+  is_chromaflow_team?: boolean;
   download_count?: number;
   marketplace_published_at?: string;
   
@@ -73,7 +73,7 @@ export interface BaseAgentData {
     version_number: number;
   };
   metadata?: {
-    is_chromaflow-agent_default?: boolean;
+    is_suna_default?: boolean;
     centrally_managed?: boolean;
     restrictions?: Record<string, boolean>;
   };
@@ -120,7 +120,7 @@ const CardAvatar: React.FC<{
   size?: number;
   variant: AgentCardVariant;
 }> = ({ data, size = 48, variant }) => {
-  const isChromaFlow AgentAgent = data.metadata?.is_chromaflow-agent_default === true;
+  const isSunaAgent = data.metadata?.is_suna_default === true;
   
   if (variant === 'showcase') {
     return (
@@ -134,10 +134,10 @@ const CardAvatar: React.FC<{
     );
   }
   
-  if (isChromaFlow AgentAgent) {
+  if (isSunaAgent) {
     return (
       <AgentAvatar
-        isChromaFlow AgentDefault={true}
+        isSunaDefault={true}
         size={size}
         className="border"
       />
@@ -168,14 +168,14 @@ const CardAvatar: React.FC<{
 
 // Badge components
 const MarketplaceBadge: React.FC<{ 
-  isKortixTeam?: boolean; 
+  isChromaFlowTeam?: boolean; 
   isOwner?: boolean;
-}> = ({ isKortixTeam, isOwner }) => (
+}> = ({ isChromaFlowTeam, isOwner }) => (
   <div className="flex gap-1 flex-wrap">
-    {isKortixTeam && (
+    {isChromaFlowTeam && (
       <Badge variant="secondary" className="bg-blue-100 text-blue-700 border-0 dark:bg-blue-950 dark:text-blue-300">
         <CheckCircle className="h-3 w-3 mr-1" />
-        Kortix
+        ChromaFlow
       </Badge>
     )}
     {isOwner && (
@@ -203,15 +203,15 @@ const TemplateBadge: React.FC<{ isPublic?: boolean }> = ({ isPublic }) => {
   );
 };
 
-const AgentBadges: React.FC<{ data: BaseAgentData, isChromaFlow AgentAgent: boolean }> = ({ data, isChromaFlow AgentAgent }) => (
+const AgentBadges: React.FC<{ data: BaseAgentData, isSunaAgent: boolean }> = ({ data, isSunaAgent }) => (
   <div className="flex gap-1">
-    {!isChromaFlow AgentAgent && data.current_version && (
+    {!isSunaAgent && data.current_version && (
       <Badge variant="outline" className="text-xs">
         <GitBranch className="h-3 w-3 mr-1" />
         {data.current_version.version_name}
       </Badge>
     )}
-    {!isChromaFlow AgentAgent && data.is_public && (
+    {!isSunaAgent && data.is_public && (
       <Badge variant="default" className="bg-green-100 text-green-700 border-0 dark:bg-green-950 dark:text-green-300 text-xs">
         <Globe className="h-3 w-3 mr-1" />
         Published
@@ -291,7 +291,7 @@ export const UnifiedAgentCard: React.FC<UnifiedAgentCardProps> = ({
     isDeleting = false
   } = state;
   
-  const isChromaFlow AgentAgent = data.metadata?.is_chromaflow-agent_default === true;
+  const isSunaAgent = data.metadata?.is_suna_default === true;
   const isOwner = currentUserId && data.creator_id === currentUserId;
   
   // Handle delete confirmation
@@ -436,11 +436,11 @@ export const UnifiedAgentCard: React.FC<UnifiedAgentCardProps> = ({
     const renderBadge = () => {
       switch (variant) {
         case 'marketplace':
-          return <MarketplaceBadge isKortixTeam={data.is_kortix_team} isOwner={isOwner} />;
+          return <MarketplaceBadge isChromaFlowTeam={data.is_chromaflow_team} isOwner={isOwner} />;
         case 'template':
           return <TemplateBadge isPublic={data.is_public} />;
         case 'agent':
-          return <AgentBadges data={data} isChromaFlow AgentAgent={isChromaFlow AgentAgent} />;
+          return <AgentBadges data={data} isSunaAgent={isSunaAgent} />;
         default:
           return null;
       }

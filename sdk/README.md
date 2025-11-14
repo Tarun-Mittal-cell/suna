@@ -1,4 +1,4 @@
-# Kortix SDK
+# ChromaFlow SDK
 
 [![Python](https://img.shields.io/badge/python-3.11+-blue.svg)](https://python.org)
 
@@ -9,30 +9,30 @@ A Python SDK that enables you to create, manage, and interact with AI Workers on
 Install directly from the GitHub repository:
 
 ```bash
-pip install "kortix @ git+https://github.com/kortix-ai/suna.git@main#subdirectory=sdk"
+pip install "chromaflow @ git+https://github.com/chromaflow-ai/suna.git@main#subdirectory=sdk"
 ```
 
 Or using uv:
 
 ```bash
-uv add "kortix @ git+https://github.com/kortix-ai/suna.git@main#subdirectory=sdk"
+uv add "chromaflow @ git+https://github.com/chromaflow-ai/suna.git@main#subdirectory=sdk"
 ```
 
 ## 🔧 Quick Start
 
 ```python
 import asyncio
-from kortix import kortix
+from chromaflow import chromaflow
 
 async def main():
-    mcp_tools = kortix.MCPTools(
+    mcp_tools = chromaflow.MCPTools(
         "http://localhost:4000/mcp/",  # Point to any HTTP MCP server
-        "Kortix",
+        "ChromaFlow",
     )
     await mcp_tools.initialize()
 
     # Initialize the client
-    client = kortix.Kortix(api_key="your-api-key")
+    client = chromaflow.ChromaFlow(api_key="your-api-key")
 
     # Create an agent
     agent = await client.Agent.create(

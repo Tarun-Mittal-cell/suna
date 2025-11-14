@@ -80,7 +80,7 @@ export function ThreadComponent({ projectId, threadId, compact = false, configur
     setSelectedAgent,
     initializeFromAgents,
     getCurrentAgent,
-    isChromaFlow AgentAgent,
+    isSunaAgent,
   } = useAgentSelection();
 
   const { data: agentsResponse } = useAgents();
@@ -714,7 +714,7 @@ export function ThreadComponent({ projectId, threadId, compact = false, configur
   // SEO title update
   useEffect(() => {
     if (projectName) {
-      document.title = `${projectName} | Kortix ChromaFlow Agent`;
+      document.title = `${projectName} | ChromaFlow ChromaFlow Agent`;
 
       const metaDescription = document.querySelector(
         'meta[name="description"]',
@@ -722,13 +722,13 @@ export function ThreadComponent({ projectId, threadId, compact = false, configur
       if (metaDescription) {
         metaDescription.setAttribute(
           'content',
-          `${projectName} - Interactive agent conversation powered by Kortix ChromaFlow Agent`,
+          `${projectName} - Interactive agent conversation powered by ChromaFlow ChromaFlow Agent`,
         );
       }
 
       const ogTitle = document.querySelector('meta[property="og:title"]');
       if (ogTitle) {
-        ogTitle.setAttribute('content', `${projectName} | Kortix ChromaFlow Agent`);
+        ogTitle.setAttribute('content', `${projectName} | ChromaFlow ChromaFlow Agent`);
       }
 
       const ogDescription = document.querySelector(

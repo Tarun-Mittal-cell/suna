@@ -196,7 +196,7 @@ export default function LicensePage() {
               { 
                 label: 'View License', 
                 variant: 'default',
-                onClick: () => window.open('https://github.com/kortix-ai/chromaflow-agent/blob/main/LICENSE', '_blank')
+                onClick: () => window.open('https://github.com/chromaflow-ai/chromaflow-agent/blob/main/LICENSE', '_blank')
               }
             ]}
           />

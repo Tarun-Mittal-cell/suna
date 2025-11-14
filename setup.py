@@ -159,8 +159,8 @@ def load_existing_env_vars():
             "COMPOSIO_API_KEY": backend_env.get("COMPOSIO_API_KEY", ""),
             "COMPOSIO_WEBHOOK_SECRET": backend_env.get("COMPOSIO_WEBHOOK_SECRET", ""),
         },
-        "kortix": {
-            "KORTIX_ADMIN_API_KEY": backend_env.get("KORTIX_ADMIN_API_KEY", ""),
+        "chromaflow": {
+            "CHROMAFLOW_ADMIN_API_KEY": backend_env.get("CHROMAFLOW_ADMIN_API_KEY", ""),
         },
         "frontend": {
             "NEXT_PUBLIC_SUPABASE_URL": frontend_env.get(
@@ -236,7 +236,7 @@ def generate_encryption_key():
 
 
 def generate_admin_api_key():
-    """Generates a secure admin API key for Kortix."""
+    """Generates a secure admin API key for ChromaFlow."""
     # Generate 32 random bytes and encode as hex for a readable API key
     key_bytes = secrets.token_bytes(32)
     return key_bytes.hex()
@@ -269,7 +269,7 @@ class SetupWizard:
             "webhook": existing_env_vars["webhook"],
             "mcp": existing_env_vars["mcp"],
             "composio": existing_env_vars["composio"],
-            "kortix": existing_env_vars["kortix"],
+            "chromaflow": existing_env_vars["chromaflow"],
         }
 
         # Override with any progress data (in case user is resuming)
@@ -380,11 +380,11 @@ class SetupWizard:
             config_items.append(
                 f"{Colors.YELLOW}○{Colors.ENDC} Morph (recommended)")
 
-        # Check Kortix configuration
-        if self.env_vars["kortix"]["KORTIX_ADMIN_API_KEY"]:
-            config_items.append(f"{Colors.GREEN}✓{Colors.ENDC} Kortix Admin")
+        # Check ChromaFlow configuration
+        if self.env_vars["chromaflow"]["CHROMAFLOW_ADMIN_API_KEY"]:
+            config_items.append(f"{Colors.GREEN}✓{Colors.ENDC} ChromaFlow Admin")
         else:
-            config_items.append(f"{Colors.YELLOW}○{Colors.ENDC} Kortix Admin")
+            config_items.append(f"{Colors.YELLOW}○{Colors.ENDC} ChromaFlow Admin")
 
         if any("✓" in item for item in config_items):
             print_info("Current configuration status:")
@@ -411,7 +411,7 @@ class SetupWizard:
             self.run_step(6, self.collect_morph_api_key)
             self.run_step(7, self.collect_search_api_keys)
             self.run_step(8, self.collect_rapidapi_keys)
-            self.run_step(9, self.collect_kortix_keys)
+            self.run_step(9, self.collect_chromaflow_keys)
             # Supabase Cron does not require keys; ensure DB migrations enable cron functions
             self.run_step(10, self.collect_webhook_keys)
             self.run_step(11, self.collect_mcp_keys)
@@ -687,9 +687,9 @@ class SetupWizard:
         )
         print_info("Create a snapshot with these exact settings:")
         print_info(
-            f"   - Name:\t\t{Colors.GREEN}kortix/suna:0.1.3.20{Colors.ENDC}")
+            f"   - Name:\t\t{Colors.GREEN}chromaflow/suna:0.1.3.20{Colors.ENDC}")
         print_info(
-            f"   - Snapshot name:\t{Colors.GREEN}kortix/suna:0.1.3.20{Colors.ENDC}")
+            f"   - Snapshot name:\t{Colors.GREEN}chromaflow/suna:0.1.3.20{Colors.ENDC}")
         print_info(
             f"   - Entrypoint:\t{Colors.GREEN}/usr/bin/supervisord -n -c /etc/supervisor/conf.d/supervisord.conf{Colors.ENDC}"
         )
@@ -947,24 +947,24 @@ class SetupWizard:
         else:
             print_info("Skipping RapidAPI key.")
 
-    def collect_kortix_keys(self):
-        """Generates or configures the Kortix admin API key."""
-        print_step(9, self.total_steps, "Configuring Kortix Admin API Key")
+    def collect_chromaflow_keys(self):
+        """Generates or configures the ChromaFlow admin API key."""
+        print_step(9, self.total_steps, "Configuring ChromaFlow Admin API Key")
 
         # Check if we already have a value configured
-        existing_key = self.env_vars["kortix"]["KORTIX_ADMIN_API_KEY"]
+        existing_key = self.env_vars["chromaflow"]["CHROMAFLOW_ADMIN_API_KEY"]
         if existing_key:
             print_info(
-                f"Found existing Kortix admin API key: {mask_sensitive_value(existing_key)}"
+                f"Found existing ChromaFlow admin API key: {mask_sensitive_value(existing_key)}"
             )
             print_info("Using existing admin API key.")
         else:
             print_info(
-                "Generating a secure admin API key for Kortix administrative functions...")
-            self.env_vars["kortix"]["KORTIX_ADMIN_API_KEY"] = generate_admin_api_key()
-            print_success("Kortix admin API key generated.")
+                "Generating a secure admin API key for ChromaFlow administrative functions...")
+            self.env_vars["chromaflow"]["CHROMAFLOW_ADMIN_API_KEY"] = generate_admin_api_key()
+            print_success("ChromaFlow admin API key generated.")
 
-        print_success("Kortix admin configuration saved.")
+        print_success("ChromaFlow admin configuration saved.")
 
     def collect_mcp_keys(self):
         """Collects the MCP configuration."""
@@ -1100,7 +1100,7 @@ class SetupWizard:
             **self.env_vars["mcp"],
             **self.env_vars["composio"],
             **self.env_vars["daytona"],
-            **self.env_vars["kortix"],
+            **self.env_vars["chromaflow"],
             "ENCRYPTION_KEY": encryption_key,
             "NEXT_PUBLIC_URL": "http://localhost:3000",
         }
@@ -1122,7 +1122,7 @@ class SetupWizard:
             "NEXT_PUBLIC_BACKEND_URL": "http://localhost:8000/api",
             "NEXT_PUBLIC_URL": "http://localhost:3000",
             "NEXT_PUBLIC_ENV_MODE": "LOCAL",
-            "KORTIX_ADMIN_API_KEY": self.env_vars["kortix"]["KORTIX_ADMIN_API_KEY"],
+            "CHROMAFLOW_ADMIN_API_KEY": self.env_vars["chromaflow"]["CHROMAFLOW_ADMIN_API_KEY"],
         }
 
         frontend_env_content = "# Generated by Suna install script\n\n"

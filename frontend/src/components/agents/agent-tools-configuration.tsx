@@ -11,11 +11,11 @@ interface AgentToolsConfigurationProps {
   tools: Record<string, boolean | { enabled: boolean; description: string }>;
   onToolsChange: (tools: Record<string, boolean | { enabled: boolean; description: string }>) => void;
   disabled?: boolean;
-  isChromaFlow AgentAgent?: boolean;
+  isSunaAgent?: boolean;
   isLoading?: boolean;
 }
 
-export const AgentToolsConfiguration = ({ tools, onToolsChange, disabled = false, isChromaFlow AgentAgent = false, isLoading = false }: AgentToolsConfigurationProps) => {
+export const AgentToolsConfiguration = ({ tools, onToolsChange, disabled = false, isSunaAgent = false, isLoading = false }: AgentToolsConfigurationProps) => {
   const [searchQuery, setSearchQuery] = useState<string>('');
 
   const getIconComponent = (iconName: string) => {
@@ -48,7 +48,7 @@ export const AgentToolsConfiguration = ({ tools, onToolsChange, disabled = false
       return;
     }
     
-    if (disabled && isChromaFlow AgentAgent) {
+    if (disabled && isSunaAgent) {
       toast.error("Tools cannot be modified", {
         description: "ChromaFlow Agent's default tools are managed centrally and cannot be changed.",
       });

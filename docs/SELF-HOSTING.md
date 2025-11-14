@@ -79,7 +79,7 @@ Backend keys (by purpose):
 | Triggers      | WEBHOOK_BASE_URL              |                                       No | http://localhost:8000      | Public base URL for inbound webhooks                                |
 |               | TRIGGER_WEBHOOK_SECRET        |                              Recommended | -                          | Verifies inbound triggers                                           |
 | Billing       | STRIPE\_\*                    |                                       No | -                          | Only if you enable billing                                          |
-| Admin         | KORTIX_ADMIN_API_KEY          |                                       No | -                          | Protects admin APIs                                                 |
+| Admin         | CHROMAFLOW_ADMIN_API_KEY          |                                       No | -                          | Protects admin APIs                                                 |
 | Integrations  | COMPOSIO_API_KEY              |                                       No | -                          | Optional Composio integration for tool connections                  |
 |               | COMPOSIO_WEBHOOK_SECRET       |                                       No | -                          | Optional Composio webhook secret                                    |
 
@@ -115,7 +115,7 @@ Optional (but supported):
 1. Clone the repository
 
 ```bash
-git clone https://github.com/kortix-ai/suna.git
+git clone https://github.com/chromaflow-ai/suna.git
 cd suna
 ```
 

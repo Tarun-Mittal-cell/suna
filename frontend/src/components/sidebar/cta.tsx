@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { KortixProcessModal } from '@/components/sidebar/kortix-enterprise-modal';
+import { ChromaFlowProcessModal } from '@/components/sidebar/chromaflow-enterprise-modal';
 
 export function CTACard() {
   return (
@@ -15,11 +15,11 @@ export function CTACard() {
         </div>
 
         <div>
-          <KortixProcessModal>
+          <ChromaFlowProcessModal>
             <Button className="w-full">
               Learn more
             </Button>
-          </KortixProcessModal>
+          </ChromaFlowProcessModal>
         </div>
 
       </div>

@@ -44,7 +44,7 @@ import {
 } from 'lucide-react';
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
-import { KortixLogo } from '@/components/sidebar/kortix-logo';
+import { ChromaFlowLogo } from '@/components/sidebar/chromaflow-logo';
 
 import { useAgentVersionData } from '@/hooks/use-agent-version-data';
 import { useUpdateAgent, useAgents } from '@/hooks/react-query/agents/use-agents';
@@ -155,11 +155,11 @@ export function AgentConfigurationDialog({
     setEditName(configSource.name || '');
   }, [agent, versionData]);
 
-  const isChromaFlow AgentAgent = agent?.metadata?.is_chromaflow-agent_default || false;
+  const isSunaAgent = agent?.metadata?.is_suna_default || false;
   const restrictions = agent?.metadata?.restrictions || {};
-  const isNameEditable = !isViewingOldVersion && (restrictions.name_editable !== false) && !isChromaFlow AgentAgent;
-  const isSystemPromptEditable = !isViewingOldVersion && (restrictions.system_prompt_editable !== false) && !isChromaFlow AgentAgent;
-  const areToolsEditable = !isViewingOldVersion && (restrictions.tools_editable !== false) && !isChromaFlow AgentAgent;
+  const isNameEditable = !isViewingOldVersion && (restrictions.name_editable !== false) && !isSunaAgent;
+  const isSystemPromptEditable = !isViewingOldVersion && (restrictions.system_prompt_editable !== false) && !isSunaAgent;
+  const areToolsEditable = !isViewingOldVersion && (restrictions.tools_editable !== false) && !isSunaAgent;
 
   const hasChanges = useMemo(() => {
     return JSON.stringify(formData) !== JSON.stringify(originalFormData);
@@ -226,7 +226,7 @@ export function AgentConfigurationDialog({
     }
 
     if (!isNameEditable) {
-      if (isChromaFlow AgentAgent) {
+      if (isSunaAgent) {
         toast.error("Name cannot be edited", {
           description: "ChromaFlow Agent's name is managed centrally and cannot be changed.",
         });
@@ -242,7 +242,7 @@ export function AgentConfigurationDialog({
 
   const handleSystemPromptChange = (value: string) => {
     if (!isSystemPromptEditable) {
-      if (isChromaFlow AgentAgent) {
+      if (isSunaAgent) {
         toast.error("System prompt cannot be edited", {
           description: "ChromaFlow Agent's system prompt is managed centrally.",
         });
@@ -259,7 +259,7 @@ export function AgentConfigurationDialog({
 
   const handleToolsChange = (tools: Record<string, boolean | { enabled: boolean; description: string }>) => {
     if (!areToolsEditable) {
-      if (isChromaFlow AgentAgent) {
+      if (isSunaAgent) {
         toast.error("Tools cannot be edited", {
           description: "ChromaFlow Agent's tools are managed centrally.",
         });
@@ -368,8 +368,8 @@ export function AgentConfigurationDialog({
 
   const tabItems = [
     // { id: 'general', label: 'General', icon: Settings, disabled: false },
-    { id: 'instructions', label: 'Instructions', icon: Brain, disabled: isChromaFlow AgentAgent },
-    { id: 'tools', label: 'Tools', icon: Wrench, disabled: isChromaFlow AgentAgent },
+    { id: 'instructions', label: 'Instructions', icon: Brain, disabled: isSunaAgent },
+    { id: 'tools', label: 'Tools', icon: Wrench, disabled: isSunaAgent },
     { id: 'integrations', label: 'Integrations', icon: Server, disabled: false },
     { id: 'knowledge', label: 'Knowledge', icon: BookOpen, disabled: false },
     { id: 'triggers', label: 'Triggers', icon: Zap, disabled: false },
@@ -385,9 +385,9 @@ export function AgentConfigurationDialog({
                 <div
                   className="flex-shrink-0"
                 >
-                  {isChromaFlow AgentAgent ? (
+                  {isSunaAgent ? (
                     <AgentAvatar
-                      isChromaFlow AgentDefault={true}
+                      isSunaDefault={true}
                       agentName={formData.name}
                       size={40}
                       className="ring-1 ring-border"
@@ -496,7 +496,7 @@ export function AgentConfigurationDialog({
                                     iconColor={agent.icon_color}
                                     backgroundColor={agent.icon_background}
                                     agentName={agent.name}
-                                    isChromaFlow AgentDefault={agent.metadata?.is_chromaflow-agent_default}
+                                    isSunaDefault={agent.metadata?.is_suna_default}
                                     size={24}
                                     className="flex-shrink-0"
                                   />
@@ -649,7 +649,7 @@ export function AgentConfigurationDialog({
                       tools={formData.agentpress_tools}
                       onToolsChange={handleToolsChange}
                       disabled={!areToolsEditable}
-                      isChromaFlow AgentAgent={isChromaFlow AgentAgent}
+                      isSunaAgent={isSunaAgent}
                       isLoading={isLoading}
                     />
                   </div>

@@ -3,10 +3,10 @@
 async function installChromaFlowAgentForNewUser(userId: string) {
   try {
     const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
-    const adminApiKey = process.env.KORTIX_ADMIN_API_KEY;
+    const adminApiKey = process.env.CHROMAFLOW_ADMIN_API_KEY;
     
     if (!adminApiKey) {
-      console.error('KORTIX_ADMIN_API_KEY not configured - cannot install ChromaFlow Agent');
+      console.error('CHROMAFLOW_ADMIN_API_KEY not configured - cannot install ChromaFlow Agent');
       return;
     }
   
@@ -34,7 +34,7 @@ async function installChromaFlowAgentForNewUser(userId: string) {
   }
 }
 
-export async function checkAndInstallChromaFlow AgentAgent(userId: string, userCreatedAt: string) {
+export async function checkAndInstallSunaAgent(userId: string, userCreatedAt: string) {
   const userCreatedDate = new Date(userCreatedAt);
   const tenMinutesAgo = new Date(Date.now() - 10 * 60 * 1000);
   
@@ -54,4 +54,4 @@ export async function checkAndInstallChromaFlow AgentAgent(userId: string, userC
   }
   
   return false;
-}  
+}    

@@ -56,7 +56,7 @@ export async function GET(request: NextRequest) {
               textAlign: 'center',
             }}
           >
-            {template.is_kortix_team && (
+            {template.is_chromaflow_team && (
               <div
                 style={{
                   display: 'flex',
@@ -167,7 +167,7 @@ export async function GET(request: NextRequest) {
                 bottom: '40px',
               }}
             >
-              <span style={{ color: '#64748b', fontSize: '20px' }}>Kortix ChromaFlow Agent</span>
+              <span style={{ color: '#64748b', fontSize: '20px' }}>ChromaFlow ChromaFlow Agent</span>
               <span style={{ color: '#334155', fontSize: '20px' }}>•</span>
               <span style={{ color: '#64748b', fontSize: '20px' }}>AI Agent Marketplace</span>
             </div>
@@ -228,7 +228,7 @@ export async function GET(request: NextRequest) {
                 color: '#94a3b8',
               }}
             >
-              Discover powerful AI agents on Kortix ChromaFlow Agent
+              Discover powerful AI agents on ChromaFlow ChromaFlow Agent
             </p>
           </div>
         </div>

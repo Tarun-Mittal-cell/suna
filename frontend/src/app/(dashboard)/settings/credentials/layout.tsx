@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'App Profiles | Kortix ChromaFlow Agent',
+  title: 'App Profiles | ChromaFlow ChromaFlow Agent',
   description: 'Manage your connected app integrations',
   openGraph: {
-    title: 'App Profiles | Kortix ChromaFlow Agent',
+    title: 'App Profiles | ChromaFlow ChromaFlow Agent',
     description: 'Manage your connected app integrations',
     type: 'website',
   },
