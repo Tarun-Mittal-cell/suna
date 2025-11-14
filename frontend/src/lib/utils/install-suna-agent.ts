@@ -34,7 +34,7 @@ async function installChromaFlowAgentForNewUser(userId: string) {
   }
 }
 
-export async function checkAndInstallChromaFlow AgentAgent(userId: string, userCreatedAt: string) {
+export async function checkAndInstallSunaAgent(userId: string, userCreatedAt: string) {
   const userCreatedDate = new Date(userCreatedAt);
   const tenMinutesAgo = new Date(Date.now() - 10 * 60 * 1000);
   
@@ -54,4 +54,4 @@ export async function checkAndInstallChromaFlow AgentAgent(userId: string, userC
   }
   
   return false;
-}  
+}    

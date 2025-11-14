@@ -56,8 +56,8 @@ export const useAgentSelectionStore = create<AgentSelectionState>()(
           if (current && agents.some(a => a.agent_id === current)) {
             selectedId = current;
           } else if (agents.length > 0) {
-            const defaultChromaFlow AgentAgent = agents.find(agent => agent.metadata?.is_chromaflow-agent_default);
-            selectedId = defaultChromaFlow AgentAgent ? defaultChromaFlow AgentAgent.agent_id : agents[0].agent_id;
+            const defaultSunaAgent = agents.find(agent => agent.metadata?.is_chromaflow-agent_default);
+            selectedId = defaultSunaAgent ? defaultSunaAgent.agent_id : agents[0].agent_id;
           }
         }
 
@@ -76,8 +76,8 @@ export const useAgentSelectionStore = create<AgentSelectionState>()(
         if (agents.length === 0 || currentSelectedAgentId) {
           return;
         }
-        const defaultChromaFlow AgentAgent = agents.find(agent => agent.metadata?.is_chromaflow-agent_default);
-        const agentToSelect = defaultChromaFlow AgentAgent || agents[0];
+        const defaultSunaAgent = agents.find(agent => agent.metadata?.is_chromaflow-agent_default);
+        const agentToSelect = defaultSunaAgent || agents[0];
         
         if (agentToSelect) {
           if (onAgentSelect) {
@@ -129,4 +129,4 @@ export const useAgentSelection = () => {
     getCurrentAgent: store.getCurrentAgent,
     isSunaAgent: store.isSunaAgent,
   };
-}; 
+};  
