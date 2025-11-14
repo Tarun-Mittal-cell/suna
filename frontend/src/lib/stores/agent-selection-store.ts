@@ -20,7 +20,7 @@ interface AgentSelectionState {
   clearSelection: () => void;
   
   getCurrentAgent: (agents: Agent[]) => Agent | null;
-  isChromaFlow AgentAgent: (agents: Agent[]) => boolean;
+  isSunaAgent: (agents: Agent[]) => boolean;
 }
 
 export const useAgentSelectionStore = create<AgentSelectionState>()(
@@ -99,7 +99,7 @@ export const useAgentSelectionStore = create<AgentSelectionState>()(
           : null;
       },
 
-      isChromaFlow AgentAgent: (agents: Agent[]) => {
+      isSunaAgent: (agents: Agent[]) => {
         const { selectedAgentId } = get();
         const currentAgent = selectedAgentId 
           ? agents.find(agent => agent.agent_id === selectedAgentId)
@@ -127,6 +127,6 @@ export const useAgentSelection = () => {
     autoSelectAgent: store.autoSelectAgent,
     clearSelection: store.clearSelection,
     getCurrentAgent: store.getCurrentAgent,
-    isChromaFlow AgentAgent: store.isChromaFlow AgentAgent,
+    isSunaAgent: store.isSunaAgent,
   };
 }; 

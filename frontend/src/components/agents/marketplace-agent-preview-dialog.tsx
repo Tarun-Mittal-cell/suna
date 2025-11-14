@@ -109,7 +109,7 @@ export const MarketplaceAgentPreviewDialog: React.FC<MarketplaceAgentPreviewDial
   
   if (!agent) return null;
 
-  const isChromaFlow AgentAgent = agent.is_kortix_team || false;
+  const isSunaAgent = agent.is_kortix_team || false;
   
   const tools = agent.mcp_requirements || [];
   

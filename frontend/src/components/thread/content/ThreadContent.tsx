@@ -454,14 +454,14 @@ export const ThreadContent: React.FC<ThreadContentProps> = ({
     const getAgentInfo = useCallback(() => {
 
         // Check if this is a ChromaFlow Agent default agent from metadata
-        const isChromaFlow AgentDefaultAgent = agentMetadata?.is_chromaflow-agent_default || false;
+        const isSunaDefaultAgent = agentMetadata?.is_chromaflow-agent_default || false;
 
         // Then check recent messages for agent info
         const recentAssistantWithAgent = [...displayMessages].reverse().find(msg =>
             msg.type === 'assistant' && msg.agents?.name
         );
 
-        if (agentData && !isChromaFlow AgentDefaultAgent) {
+        if (agentData && !isSunaDefaultAgent) {
             // Use modern icon system for agent display
             const avatar = (
                 <div className="h-5 w-5 flex items-center justify-center rounded text-xs">
@@ -475,11 +475,11 @@ export const ThreadContent: React.FC<ThreadContentProps> = ({
         }
 
         if (recentAssistantWithAgent?.agents?.name) {
-            const isChromaFlow AgentAgent = recentAssistantWithAgent.agents.name === 'ChromaFlow Agent' || isChromaFlow AgentDefaultAgent;
+            const isSunaAgent = recentAssistantWithAgent.agents.name === 'ChromaFlow Agent' || isSunaDefaultAgent;
             // Use modern icon system for agent display  
-            const avatar = !isChromaFlow AgentDefaultAgent ? (
+            const avatar = !isSunaDefaultAgent ? (
                 <>
-                    {isChromaFlow AgentAgent ? (
+                    {isSunaAgent ? (
                         <div className="h-5 w-5 flex items-center justify-center rounded text-xs">
                             <KortixLogo size={16} />
                         </div>
@@ -501,7 +501,7 @@ export const ThreadContent: React.FC<ThreadContentProps> = ({
         }
 
         // Fallback: if this is a ChromaFlow Agent default agent, always show KortixLogo
-        if (isChromaFlow AgentDefaultAgent) {
+        if (isSunaDefaultAgent) {
             return {
                 name: agentName || 'ChromaFlow Agent',
                 avatar: (

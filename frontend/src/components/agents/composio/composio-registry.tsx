@@ -523,7 +523,7 @@ export const ComposioRegistry: React.FC<ComposioRegistryProps> = ({
                     <AgentSelector
                       selectedAgentId={currentAgentId}
                       onAgentSelect={handleAgentSelect}
-                      isChromaFlow AgentAgent={agent?.metadata?.is_chromaflow-agent_default}
+                      isSunaAgent={agent?.metadata?.is_chromaflow-agent_default}
                     />
                   )} */}
                 </div>

@@ -20,7 +20,7 @@ interface AgentAvatarProps {
   iconColor?: string;
   backgroundColor?: string;
   agentName?: string;
-  isChromaFlow AgentDefault?: boolean;
+  isSunaDefault?: boolean;
   
   // Common props
   size?: number;
@@ -38,7 +38,7 @@ export const AgentAvatar: React.FC<AgentAvatarProps> = ({
   iconColor: propIconColor,
   backgroundColor: propBackgroundColor,
   agentName: propAgentName,
-  isChromaFlow AgentDefault: propIsChromaFlow AgentDefault,
+  isSunaDefault: propIsSunaDefault,
   
   // Common props
   size = 16, 
@@ -53,7 +53,7 @@ export const AgentAvatar: React.FC<AgentAvatarProps> = ({
   const iconColor = propIconColor ?? agent?.icon_color ?? '#000000';
   const backgroundColor = propBackgroundColor ?? agent?.icon_background ?? '#F3F4F6';
   const agentName = propAgentName ?? agent?.name ?? fallbackName;
-  const isChromaFlow Agent = propIsChromaFlow AgentDefault ?? agent?.metadata?.is_chromaflow-agent_default;
+  const isSuna = propIsSunaDefault ?? agent?.metadata?.is_chromaflow-agent_default;
 
   // Calculate responsive border radius - proportional to size
   // Use a ratio that prevents full rounding while maintaining nice corners
@@ -62,7 +62,7 @@ export const AgentAvatar: React.FC<AgentAvatarProps> = ({
   };
 
   // Show skeleton when no data is available
-  if (!agent && !propIconName && !propIsChromaFlow AgentDefault && agentId) {
+  if (!agent && !propIconName && !propIsSunaDefault && agentId) {
     return (
       <div 
         className={cn("bg-muted animate-pulse border", className)}
@@ -71,7 +71,7 @@ export const AgentAvatar: React.FC<AgentAvatarProps> = ({
     );
   }
 
-  if (isChromaFlow Agent) {
+  if (isSuna) {
     return (
       <div 
         className={cn(
