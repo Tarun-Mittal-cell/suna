@@ -155,7 +155,7 @@ export function AgentConfigurationDialog({
     setEditName(configSource.name || '');
   }, [agent, versionData]);
 
-  const isSunaAgent = agent?.metadata?.is_chromaflow-agent_default || false;
+  const isSunaAgent = agent?.metadata?.is_suna_default || false;
   const restrictions = agent?.metadata?.restrictions || {};
   const isNameEditable = !isViewingOldVersion && (restrictions.name_editable !== false) && !isSunaAgent;
   const isSystemPromptEditable = !isViewingOldVersion && (restrictions.system_prompt_editable !== false) && !isSunaAgent;
@@ -496,7 +496,7 @@ export function AgentConfigurationDialog({
                                     iconColor={agent.icon_color}
                                     backgroundColor={agent.icon_background}
                                     agentName={agent.name}
-                                    isSunaDefault={agent.metadata?.is_chromaflow-agent_default}
+                                    isSunaDefault={agent.metadata?.is_suna_default}
                                     size={24}
                                     className="flex-shrink-0"
                                   />

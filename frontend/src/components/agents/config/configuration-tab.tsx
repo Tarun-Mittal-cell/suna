@@ -37,7 +37,7 @@ interface ConfigurationTabProps {
   onToolsSave?: (tools: Record<string, boolean | { enabled: boolean; description: string }>) => void;
   initialAccordion?: string;
   agentMetadata?: {
-    is_chromaflow-agent_default?: boolean;
+    is_suna_default?: boolean;
     centrally_managed?: boolean;
     restrictions?: {
       system_prompt_editable?: boolean;
@@ -65,7 +65,7 @@ export function ConfigurationTab({
   isLoading = false,
 }: ConfigurationTabProps) {
 
-  const isSunaAgent = agentMetadata?.is_chromaflow-agent_default || false;
+  const isSunaAgent = agentMetadata?.is_suna_default || false;
 
   const mapAccordion = (val?: string) => {
     if (val === 'instructions') return isSunaAgent ? 'integrations' : 'system';

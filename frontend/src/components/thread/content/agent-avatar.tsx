@@ -53,7 +53,7 @@ export const AgentAvatar: React.FC<AgentAvatarProps> = ({
   const iconColor = propIconColor ?? agent?.icon_color ?? '#000000';
   const backgroundColor = propBackgroundColor ?? agent?.icon_background ?? '#F3F4F6';
   const agentName = propAgentName ?? agent?.name ?? fallbackName;
-  const isSuna = propIsSunaDefault ?? agent?.metadata?.is_chromaflow-agent_default;
+  const isSuna = propIsSunaDefault ?? agent?.metadata?.is_suna_default;
 
   // Calculate responsive border radius - proportional to size
   // Use a ratio that prevents full rounding while maintaining nice corners

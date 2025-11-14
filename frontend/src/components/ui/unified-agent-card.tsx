@@ -73,7 +73,7 @@ export interface BaseAgentData {
     version_number: number;
   };
   metadata?: {
-    is_chromaflow-agent_default?: boolean;
+    is_suna_default?: boolean;
     centrally_managed?: boolean;
     restrictions?: Record<string, boolean>;
   };
@@ -120,7 +120,7 @@ const CardAvatar: React.FC<{
   size?: number;
   variant: AgentCardVariant;
 }> = ({ data, size = 48, variant }) => {
-  const isSunaAgent = data.metadata?.is_chromaflow-agent_default === true;
+  const isSunaAgent = data.metadata?.is_suna_default === true;
   
   if (variant === 'showcase') {
     return (
@@ -291,7 +291,7 @@ export const UnifiedAgentCard: React.FC<UnifiedAgentCardProps> = ({
     isDeleting = false
   } = state;
   
-  const isSunaAgent = data.metadata?.is_chromaflow-agent_default === true;
+  const isSunaAgent = data.metadata?.is_suna_default === true;
   const isOwner = currentUserId && data.creator_id === currentUserId;
   
   // Handle delete confirmation

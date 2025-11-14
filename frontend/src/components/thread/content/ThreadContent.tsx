@@ -454,7 +454,7 @@ export const ThreadContent: React.FC<ThreadContentProps> = ({
     const getAgentInfo = useCallback(() => {
 
         // Check if this is a ChromaFlow Agent default agent from metadata
-        const isSunaDefaultAgent = agentMetadata?.is_chromaflow-agent_default || false;
+        const isSunaDefaultAgent = agentMetadata?.is_suna_default || false;
 
         // Then check recent messages for agent info
         const recentAssistantWithAgent = [...displayMessages].reverse().find(msg =>

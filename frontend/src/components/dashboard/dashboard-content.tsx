@@ -122,7 +122,7 @@ export function DashboardContent() {
     : null;
   const displayName = selectedAgent?.name || 'ChromaFlow Agent';
   const agentAvatar = undefined;
-  const isSunaAgent = selectedAgent?.metadata?.is_chromaflow-agent_default || false;
+  const isSunaAgent = selectedAgent?.metadata?.is_suna_default || false;
 
   const threadQuery = useThreadQuery(initiatedThreadId || '');
 
