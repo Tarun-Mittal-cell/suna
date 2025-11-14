@@ -115,7 +115,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         {/* Google Tag Manager */}
         <Script id="google-tag-manager" strategy="afterInteractive">
@@ -129,7 +129,7 @@ export default function RootLayout({
       </head>
 
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans bg-background`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans bg-black text-white bg-background`}
       >
         <noscript>
           <iframe
