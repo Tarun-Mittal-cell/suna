@@ -274,8 +274,8 @@ class AgentService:
         
         if version_data:
             self.loader._apply_version_config(agent, version_data)
-        elif agent.is_suna_default:
-            self.loader._load_suna_config(agent)
+        elif agent.is_chromaflow_agent_default:
+            self.loader._load_chromaflow_agent_config(agent)
         else:
             # No config available, use empty defaults for filtering
             agent.configured_mcps = []
@@ -324,8 +324,8 @@ class AgentService:
             
             if version_data:
                 self.loader._apply_version_config(agent, version_data)
-            elif agent.is_suna_default:
-                self.loader._load_suna_config(agent)
+            elif agent.is_chromaflow_agent_default:
+                self.loader._load_chromaflow_agent_config(agent)
             
             configured_mcps = agent.configured_mcps or []
             agentpress_tools = agent.agentpress_tools or {}
@@ -364,8 +364,8 @@ class AgentService:
             if version_data:
                 self.loader._apply_version_config(agent, version_data)
                 agent.config_loaded = True
-            elif agent.is_suna_default:
-                self.loader._load_suna_config(agent)
+            elif agent.is_chromaflow_agent_default:
+                self.loader._load_chromaflow_agent_config(agent)
                 agent.config_loaded = True
             
             agent_datas.append(agent.to_dict())

@@ -37,7 +37,7 @@ interface ConfigurationTabProps {
   onToolsSave?: (tools: Record<string, boolean | { enabled: boolean; description: string }>) => void;
   initialAccordion?: string;
   agentMetadata?: {
-    is_suna_default?: boolean;
+    is_chromaflow-agent_default?: boolean;
     centrally_managed?: boolean;
     restrictions?: {
       system_prompt_editable?: boolean;
@@ -65,17 +65,17 @@ export function ConfigurationTab({
   isLoading = false,
 }: ConfigurationTabProps) {
 
-  const isSunaAgent = agentMetadata?.is_suna_default || false;
+  const isChromaFlow AgentAgent = agentMetadata?.is_chromaflow-agent_default || false;
 
   const mapAccordion = (val?: string) => {
-    if (val === 'instructions') return isSunaAgent ? 'integrations' : 'system';
-    if (isSunaAgent && (val === 'system' || val === 'tools')) {
+    if (val === 'instructions') return isChromaFlow AgentAgent ? 'integrations' : 'system';
+    if (isChromaFlow AgentAgent && (val === 'system' || val === 'tools')) {
       return 'integrations';
     }
     if (['system', 'tools', 'integrations', 'knowledge', 'triggers'].includes(val || '')) {
       return val!;
     }
-    return isSunaAgent ? 'integrations' : 'system';
+    return isChromaFlow AgentAgent ? 'integrations' : 'system';
   };
 
   const [openAccordion, setOpenAccordion] = React.useState<string>(mapAccordion(initialAccordion));
@@ -90,7 +90,7 @@ export function ConfigurationTab({
   const areToolsEditable = !isViewingOldVersion && (restrictions.tools_editable !== false);
 
   const handleSystemPromptChange = (value: string) => {
-    if (!isSystemPromptEditable && isSunaAgent) {
+    if (!isSystemPromptEditable && isChromaFlow AgentAgent) {
       toast.error("System prompt cannot be edited", {
         description: "ChromaFlow Agent's system prompt is managed centrally and cannot be changed.",
       });
@@ -104,7 +104,7 @@ export function ConfigurationTab({
   };
 
   const handleToolsChange = (tools: Record<string, boolean | { enabled: boolean; description: string }>) => {
-    if (!areToolsEditable && isSunaAgent) {
+    if (!areToolsEditable && isChromaFlow AgentAgent) {
       toast.error("Tools cannot be modified", {
         description: "ChromaFlow Agent's default tools are managed centrally and cannot be changed.",
       });
@@ -122,7 +122,7 @@ export function ConfigurationTab({
     <div className="h-full flex flex-col">
       <div className="flex-1 overflow-y-auto">
         <div className="px-8 py-0 space-y-3">
-          {isSunaAgent && (
+          {isChromaFlow AgentAgent && (
             <div className="p-4 bg-primary/10 border border-primary-200 rounded-xl">
               <div className="flex items-center gap-3 mb-2">
                 <div className="text-primary-600">
@@ -138,7 +138,7 @@ export function ConfigurationTab({
           )}
 
           <div className="space-y-3">
-            {!isSunaAgent && (
+            {!isChromaFlow AgentAgent && (
               <>
                 <div className="group overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:border-primary/10" data-tour="model-section">
                   <button
@@ -239,7 +239,7 @@ export function ConfigurationTab({
                       tools={displayData.agentpress_tools}
                       onToolsChange={areToolsEditable ? handleToolsChange : () => { }}
                       disabled={!areToolsEditable}
-                      isSunaAgent={isSunaAgent}
+                      isChromaFlow AgentAgent={isChromaFlow AgentAgent}
                       isLoading={isLoading}
                     />
                   </div>

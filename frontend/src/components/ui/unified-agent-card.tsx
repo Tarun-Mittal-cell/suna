@@ -73,7 +73,7 @@ export interface BaseAgentData {
     version_number: number;
   };
   metadata?: {
-    is_suna_default?: boolean;
+    is_chromaflow-agent_default?: boolean;
     centrally_managed?: boolean;
     restrictions?: Record<string, boolean>;
   };
@@ -120,7 +120,7 @@ const CardAvatar: React.FC<{
   size?: number;
   variant: AgentCardVariant;
 }> = ({ data, size = 48, variant }) => {
-  const isSunaAgent = data.metadata?.is_suna_default === true;
+  const isChromaFlow AgentAgent = data.metadata?.is_chromaflow-agent_default === true;
   
   if (variant === 'showcase') {
     return (
@@ -134,10 +134,10 @@ const CardAvatar: React.FC<{
     );
   }
   
-  if (isSunaAgent) {
+  if (isChromaFlow AgentAgent) {
     return (
       <AgentAvatar
-        isSunaDefault={true}
+        isChromaFlow AgentDefault={true}
         size={size}
         className="border"
       />
@@ -203,15 +203,15 @@ const TemplateBadge: React.FC<{ isPublic?: boolean }> = ({ isPublic }) => {
   );
 };
 
-const AgentBadges: React.FC<{ data: BaseAgentData, isSunaAgent: boolean }> = ({ data, isSunaAgent }) => (
+const AgentBadges: React.FC<{ data: BaseAgentData, isChromaFlow AgentAgent: boolean }> = ({ data, isChromaFlow AgentAgent }) => (
   <div className="flex gap-1">
-    {!isSunaAgent && data.current_version && (
+    {!isChromaFlow AgentAgent && data.current_version && (
       <Badge variant="outline" className="text-xs">
         <GitBranch className="h-3 w-3 mr-1" />
         {data.current_version.version_name}
       </Badge>
     )}
-    {!isSunaAgent && data.is_public && (
+    {!isChromaFlow AgentAgent && data.is_public && (
       <Badge variant="default" className="bg-green-100 text-green-700 border-0 dark:bg-green-950 dark:text-green-300 text-xs">
         <Globe className="h-3 w-3 mr-1" />
         Published
@@ -291,7 +291,7 @@ export const UnifiedAgentCard: React.FC<UnifiedAgentCardProps> = ({
     isDeleting = false
   } = state;
   
-  const isSunaAgent = data.metadata?.is_suna_default === true;
+  const isChromaFlow AgentAgent = data.metadata?.is_chromaflow-agent_default === true;
   const isOwner = currentUserId && data.creator_id === currentUserId;
   
   // Handle delete confirmation
@@ -440,7 +440,7 @@ export const UnifiedAgentCard: React.FC<UnifiedAgentCardProps> = ({
         case 'template':
           return <TemplateBadge isPublic={data.is_public} />;
         case 'agent':
-          return <AgentBadges data={data} isSunaAgent={isSunaAgent} />;
+          return <AgentBadges data={data} isChromaFlow AgentAgent={isChromaFlow AgentAgent} />;
         default:
           return null;
       }

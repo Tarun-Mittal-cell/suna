@@ -173,12 +173,12 @@ function LegalContent() {
                         Unit 12-2521 Austin, Texas 78702, United States).
                       </li>
                       <li>
-                        "Site" refers to the Suna website, including any related
+                        "Site" refers to the ChromaFlow Agent website, including any related
                         features, content, or applications offered from time to
                         time by the Company.
                       </li>
                       <li>
-                        "Service" refers to the Suna website and all related
+                        "Service" refers to the ChromaFlow Agent website and all related
                         services provided by the Company, including the
                         AI-powered agent that helps you accomplish real-world
                         tasks.
@@ -354,7 +354,7 @@ function LegalContent() {
                       Open Source License
                     </h3>
                     <p className="text-muted-foreground text-balance mb-6">
-                      Suna is licensed under the Apache License, Version 2.0.
+                      ChromaFlow Agent is licensed under the Apache License, Version 2.0.
                       You may obtain a copy of the License at{' '}
                       <a
                         href="http://www.apache.org/licenses/LICENSE-2.0"
@@ -556,7 +556,7 @@ function LegalContent() {
                       Trademarks and Patents
                     </h3>
                     <p className="text-muted-foreground text-balance mb-6">
-                      All Suna logos, marks, and designations are trademarks or
+                      All ChromaFlow Agent logos, marks, and designations are trademarks or
                       registered trademarks of the Company. All other trademarks
                       mentioned on this website are the property of their
                       respective owners. The trademarks and logos displayed on
@@ -719,7 +719,7 @@ function LegalContent() {
                     </p>
 
                     <p className="text-muted-foreground text-balance mb-6">
-                      References to our "Services" at Suna in this statement
+                      References to our "Services" at ChromaFlow Agent in this statement
                       include our website, apps, and other products and
                       services. This statement applies to our Services that
                       display or reference this Privacy Statement. Third-party
@@ -728,7 +728,7 @@ function LegalContent() {
                     </p>
 
                     <p className="text-muted-foreground text-balance mb-6">
-                      Suna does not collect biometric or identifying
+                      ChromaFlow Agent does not collect biometric or identifying
                       information. All data is processed securely and any data
                       is deleted upon account removal.
                     </p>

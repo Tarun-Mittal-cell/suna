@@ -81,7 +81,7 @@ const data = {
       items: [
         {
           title: "GitHub Repository",
-          url: "https://github.com/kortix-ai/suna",
+          url: "https://github.com/kortix-ai/chromaflow-agent",
           external: true,
         },
         {

@@ -10,7 +10,7 @@ async function installChromaFlowAgentForNewUser(userId: string) {
       return;
     }
   
-    const response = await fetch(`${backendUrl}/admin/suna-agents/install-user/${userId}`, {
+    const response = await fetch(`${backendUrl}/admin/chromaflow-agent-agents/install-user/${userId}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ async function installChromaFlowAgentForNewUser(userId: string) {
   }
 }
 
-export async function checkAndInstallSunaAgent(userId: string, userCreatedAt: string) {
+export async function checkAndInstallChromaFlow AgentAgent(userId: string, userCreatedAt: string) {
   const userCreatedDate = new Date(userCreatedAt);
   const tenMinutesAgo = new Date(Date.now() - 10 * 60 * 1000);
   

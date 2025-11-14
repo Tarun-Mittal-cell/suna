@@ -790,8 +790,8 @@ export const TOOL_GROUPS: Record<string, ToolGroup> = {
 
   agent_creation_tool: {
     name: 'agent_creation_tool',
-    displayName: 'Agent Creation (Suna)',
-    description: 'Comprehensive agent creation and management (Suna only)',
+    displayName: 'Agent Creation (ChromaFlow Agent)',
+    description: 'Comprehensive agent creation and management (ChromaFlow Agent only)',
     icon: 'Plus',
     color: 'bg-indigo-100 dark:bg-indigo-800/50',
     toolClass: 'AgentCreationTool',
