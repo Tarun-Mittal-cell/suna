@@ -334,13 +334,13 @@ export function DeliverablesSection() {
                     </motion.p>
 
                     <motion.button
-                      className="group inline-flex h-12 items-center justify-center gap-2 text-base font-medium tracking-wide rounded-full text-primary-foreground dark:text-black px-8 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] bg-primary dark:bg-white hover:bg-primary/90 dark:hover:bg-white/90 transition-all duration-200 w-fit mb-8"
+                      className="group inline-flex h-12 items-center justify-center gap-2 text-base font-medium tracking-wide rounded-full text-black px-8 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] bg-secondary hover:bg-secondary/90 transition-all duration-200 w-fit mb-8"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.2 }}
                     >
                       <span>Get Started</span>
-                      <span className="inline-flex items-center justify-center size-6 rounded-full bg-white/20 dark:bg-black/10 group-hover:bg-white/30 dark:group-hover:bg-black/20 transition-colors duration-200">
+                      <span className="inline-flex items-center justify-center size-6 rounded-full bg-black/10 group-hover:bg-black/20 transition-colors duration-200">
                         <svg
                           width="14"
                           height="14"
