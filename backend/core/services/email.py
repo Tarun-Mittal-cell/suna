@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 class EmailService:
     def __init__(self):
         self.api_token = os.getenv('MAILTRAP_API_TOKEN')
-        self.sender_email = os.getenv('MAILTRAP_SENDER_EMAIL', 'dom@kortix.ai')
+        self.sender_email = os.getenv('MAILTRAP_SENDER_EMAIL', 'dom@chromaflow.ai')
         self.sender_name = os.getenv('MAILTRAP_SENDER_NAME', 'ChromaFlow Agent Team')
         
         if not self.api_token:
@@ -71,7 +71,7 @@ class EmailService:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to Kortix ChromaFlow Agent</title>
+  <title>Welcome to ChromaFlow ChromaFlow Agent</title>
   <style>
     body {{
       font-family: Arial, sans-serif;
@@ -137,13 +137,13 @@ class EmailService:
 <body>
   <div class="container">
     <div class="logo-container">
-      <img src="https://i.postimg.cc/WdNtRx5Z/kortix-chromaflow_agent-logo.png" alt="Kortix ChromaFlow Agent Logo" class="logo">
+      <img src="https://i.postimg.cc/WdNtRx5Z/chromaflow-chromaflow_agent-logo.png" alt="ChromaFlow ChromaFlow Agent Logo" class="logo">
     </div>
-    <h1>Welcome to Kortix ChromaFlow Agent!</h1>
+    <h1>Welcome to ChromaFlow ChromaFlow Agent!</h1>
 
     <p>Hi {user_name},</p>
 
-    <p><em><strong>Welcome to Kortix ChromaFlow Agent — we're excited to have you on board!</strong></em></p>
+    <p><em><strong>Welcome to ChromaFlow ChromaFlow Agent — we're excited to have you on board!</strong></em></p>
 
     <p>To get started, we'd like to get to know you better: fill out this short <a href="https://docs.google.com/forms/d/e/1FAIpQLSef1EHuqmIh_iQz-kwhjnzSC3Ml-V_5wIySDpMoMU9W_j24JQ/viewform">form</a>!</p>
 
@@ -153,7 +153,7 @@ class EmailService:
 
     <p>Let us know if you need help getting started or have questions — we're always here, and join our <a href="https://discord.com/invite/FjD644cfcs">Discord community</a>.</p>
 
-    <p><strong>For your business:</strong> if you want to automate manual and ordinary tasks for your company, book a call with us <a href="https://cal.com/team/kortix/enterprise-demo">here</a></p>
+    <p><strong>For your business:</strong> if you want to automate manual and ordinary tasks for your company, book a call with us <a href="https://cal.com/team/chromaflow/enterprise-demo">here</a></p>
 
     <p>Thanks again, and welcome to the ChromaFlow Agent community <span class="emoji">🌞</span></p>
 
@@ -177,7 +177,7 @@ To celebrate your arrival, here's a 15% discount for your first month to get mor
 
 Let us know if you need help getting started or have questions — we're always here, and join our Discord community: https://discord.com/invite/FjD644cfcs
 
-For your business: if you want to automate manual and ordinary tasks for your company, book a call with us here: https://cal.com/team/kortix/enterprise-demo 
+For your business: if you want to automate manual and ordinary tasks for your company, book a call with us here: https://cal.com/team/chromaflow/enterprise-demo 
 
 Thanks again, and welcome to the ChromaFlow Agent community 🌞
 

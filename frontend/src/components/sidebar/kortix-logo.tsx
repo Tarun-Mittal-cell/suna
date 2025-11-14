@@ -4,10 +4,10 @@ import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
-interface KortixLogoProps {
+interface ChromaFlowLogoProps {
   size?: number;
 }
-export function KortixLogo({ size = 24 }: KortixLogoProps) {
+export function ChromaFlowLogo({ size = 24 }: ChromaFlowLogoProps) {
   const { theme, systemTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -22,8 +22,8 @@ export function KortixLogo({ size = 24 }: KortixLogoProps) {
 
   return (
     <Image
-        src="/kortix-symbol.svg"
-        alt="Kortix"
+        src="/chromaflow-symbol.svg"
+        alt="ChromaFlow"
         width={size}
         height={size}
         className={`${shouldInvert ? 'invert' : ''} flex-shrink-0`}

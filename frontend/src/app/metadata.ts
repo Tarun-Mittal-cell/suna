@@ -7,11 +7,11 @@ export const metadata: Metadata = {
   keywords: ['ChromaFlow Agent', 'ChromaFlow', 'AI', 'Agent', 'Open Source', 'Enterprise'],
   authors: [
     {
-      name: 'Kortix AI Corp',
-      url: 'https://kortix.ai',
+      name: 'ChromaFlow AI Corp',
+      url: 'https://chromaflow.ai',
     },
   ],
-  creator: 'Kortix AI Corp',
+  creator: 'ChromaFlow AI Corp',
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: siteConfig.name,
     description: siteConfig.description,
-    creator: '@kortixai',
+    creator: '@chromaflowai',
     images: ['/banner.png'],
   },
   robots: {

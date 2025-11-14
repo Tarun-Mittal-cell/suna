@@ -1,4 +1,4 @@
-# Kortix Frontend
+# ChromaFlow Frontend
 
 ## Quick Setup
 

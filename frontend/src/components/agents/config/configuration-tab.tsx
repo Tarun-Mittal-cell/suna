@@ -7,7 +7,7 @@ import { AgentKnowledgeBaseManager } from '../knowledge-base/agent-kb-tree';
 import { AgentTriggersConfiguration } from '../triggers/agent-triggers-configuration';
 import { AgentModelSelector } from './model-selector';
 import { toast } from 'sonner';
-import { KortixLogo } from '../../sidebar/kortix-logo';
+import { ChromaFlowLogo } from '../../sidebar/chromaflow-logo';
 
 interface ConfigurationTabProps {
   agentId: string;
@@ -126,7 +126,7 @@ export function ConfigurationTab({
             <div className="p-4 bg-primary/10 border border-primary-200 rounded-xl">
               <div className="flex items-center gap-3 mb-2">
                 <div className="text-primary-600">
-                  <KortixLogo size={20} />
+                  <ChromaFlowLogo size={20} />
                 </div>
                 <span className="font-semibold text-primary-800">ChromaFlow Default Agent</span>
               </div>

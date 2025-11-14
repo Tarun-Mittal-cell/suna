@@ -44,7 +44,7 @@ import {
 } from 'lucide-react';
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
-import { KortixLogo } from '@/components/sidebar/kortix-logo';
+import { ChromaFlowLogo } from '@/components/sidebar/chromaflow-logo';
 
 import { useAgentVersionData } from '@/hooks/use-agent-version-data';
 import { useUpdateAgent, useAgents } from '@/hooks/react-query/agents/use-agents';

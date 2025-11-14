@@ -411,7 +411,7 @@ class AgentService:
             "download_count": template_data.get('download_count', 0),
             "creator_name": agent_data.metadata.get('creator_name'),
             "creator_id": template_data.get('creator_id'),
-            "is_kortix_team": template_data.get('is_kortix_team', False)
+            "is_chromaflow_team": template_data.get('is_chromaflow_team', False)
         })
         
         return result 

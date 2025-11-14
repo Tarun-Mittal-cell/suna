@@ -29,7 +29,7 @@ import { Examples } from './examples';
 import { AgentExamples } from './examples/agent-examples';
 import { useThreadQuery } from '@/hooks/react-query/threads/use-threads';
 import { normalizeFilenameToNFC } from '@/lib/utils/unicode';
-import { KortixLogo } from '../sidebar/kortix-logo';
+import { ChromaFlowLogo } from '../sidebar/chromaflow-logo';
 import { AgentRunLimitDialog } from '@/components/thread/agent-run-limit-dialog';
 import { CustomAgentsSection } from './custom-agents-section';
 import { toast } from 'sonner';

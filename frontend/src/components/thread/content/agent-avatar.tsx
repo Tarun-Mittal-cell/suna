@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useAgentFromCache } from '@/hooks/react-query/agents/use-agents';
-import { KortixLogo } from '@/components/sidebar/kortix-logo';
+import { ChromaFlowLogo } from '@/components/sidebar/chromaflow-logo';
 import { DynamicIcon } from 'lucide-react/dynamic';
 import { cn } from '@/lib/utils';
 import type { Agent } from '@/hooks/react-query/agents/utils';
@@ -80,7 +80,7 @@ export const AgentAvatar: React.FC<AgentAvatarProps> = ({
         )}
         style={{ width: size, height: size, ...borderRadiusStyle }}
       >
-        <KortixLogo size={size * 0.6} />
+        <ChromaFlowLogo size={size * 0.6} />
       </div>
     );
   }

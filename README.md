@@ -1,38 +1,38 @@
 <div align="center">
 
-# Kortix – Open Source Platform to Build, Manage and Train AI Agents
+# ChromaFlow – Open Source Platform to Build, Manage and Train AI Agents
 
-![Kortix Screenshot](frontend/public/banner.png)
+![ChromaFlow Screenshot](frontend/public/banner.png)
 
 **The complete platform for creating autonomous AI agents that work for you**
 
-Kortix is a comprehensive open source platform that empowers you to build, manage, and train sophisticated AI agents for any use case. Create powerful agents that act autonomously on your behalf, from general-purpose assistants to specialized automation tools.
+ChromaFlow is a comprehensive open source platform that empowers you to build, manage, and train sophisticated AI agents for any use case. Create powerful agents that act autonomously on your behalf, from general-purpose assistants to specialized automation tools.
 
 [![License](https://img.shields.io/badge/License-Apache--2.0-blue)](./license)
 [![Discord Follow](https://dcbadge.limes.pink/api/server/Py6pCBUUPw?style=flat)](https://discord.gg/Py6pCBUUPw)
-[![Twitter Follow](https://img.shields.io/twitter/follow/kortixai)](https://x.com/kortixai)
-[![GitHub Repo stars](https://img.shields.io/github/stars/kortix-ai/suna)](https://github.com/kortix-ai/suna)
-[![Issues](https://img.shields.io/github/issues/kortix-ai/suna)](https://github.com/kortix-ai/suna/labels/bug)
+[![Twitter Follow](https://img.shields.io/twitter/follow/chromaflowai)](https://x.com/chromaflowai)
+[![GitHub Repo stars](https://img.shields.io/github/stars/chromaflow-ai/suna)](https://github.com/chromaflow-ai/suna)
+[![Issues](https://img.shields.io/github/issues/chromaflow-ai/suna)](https://github.com/chromaflow-ai/suna/labels/bug)
 
 <!-- Keep these links. Translations will automatically update with the README. -->
-[Deutsch](https://www.readme-i18n.com/kortix-ai/suna?lang=de) | 
-[Español](https://www.readme-i18n.com/kortix-ai/suna?lang=es) | 
-[français](https://www.readme-i18n.com/kortix-ai/suna?lang=fr) | 
-[日本語](https://www.readme-i18n.com/kortix-ai/suna?lang=ja) | 
-[한국어](https://www.readme-i18n.com/kortix-ai/suna?lang=ko) | 
-[Português](https://www.readme-i18n.com/kortix-ai/suna?lang=pt) | 
-[Русский](https://www.readme-i18n.com/kortix-ai/suna?lang=ru) | 
-[中文](https://www.readme-i18n.com/kortix-ai/suna?lang=zh)
+[Deutsch](https://www.readme-i18n.com/chromaflow-ai/suna?lang=de) | 
+[Español](https://www.readme-i18n.com/chromaflow-ai/suna?lang=es) | 
+[français](https://www.readme-i18n.com/chromaflow-ai/suna?lang=fr) | 
+[日本語](https://www.readme-i18n.com/chromaflow-ai/suna?lang=ja) | 
+[한국어](https://www.readme-i18n.com/chromaflow-ai/suna?lang=ko) | 
+[Português](https://www.readme-i18n.com/chromaflow-ai/suna?lang=pt) | 
+[Русский](https://www.readme-i18n.com/chromaflow-ai/suna?lang=ru) | 
+[中文](https://www.readme-i18n.com/chromaflow-ai/suna?lang=zh)
 
 </div>
 
-## 🌟 What Makes Kortix Special
+## 🌟 What Makes ChromaFlow Special
 
 ### 🤖 Includes ChromaFlow Agent – Flagship Generalist AI Worker
-Meet ChromaFlow Agent, our showcase agent that demonstrates the full power of the Kortix platform. Through natural conversation, ChromaFlow Agent handles research, data analysis, browser automation, file management, and complex workflows – showing you what's possible when you build with Kortix.
+Meet ChromaFlow Agent, our showcase agent that demonstrates the full power of the ChromaFlow platform. Through natural conversation, ChromaFlow Agent handles research, data analysis, browser automation, file management, and complex workflows – showing you what's possible when you build with ChromaFlow.
 
 ### 🔧 Build Custom ChromaFlow Agent-Type Agents
-Create your own specialized agents tailored to specific domains, workflows, or business needs. Whether you need agents for customer service, data processing, content creation, or industry-specific tasks, Kortix provides the infrastructure and tools to build, deploy, and scale them.
+Create your own specialized agents tailored to specific domains, workflows, or business needs. Whether you need agents for customer service, data processing, content creation, or industry-specific tasks, ChromaFlow provides the infrastructure and tools to build, deploy, and scale them.
 
 ### 🚀 Complete Platform Capabilities
 - **Browser Automation**: Navigate websites, extract data, fill forms, automate web workflows
@@ -44,7 +44,7 @@ Create your own specialized agents tailored to specific domains, workflows, or b
 
 ## 📋 Table of Contents
 
-- [🌟 What Makes Kortix Special](#-what-makes-kortix-special)
+- [🌟 What Makes ChromaFlow Special](#-what-makes-chromaflow-special)
 - [🎯 Agent Examples & Use Cases](#-agent-examples--use-cases)
 - [🏗️ Platform Architecture](#️-platform-architecture)
 - [🚀 Quick Start](#-quick-start)
@@ -56,7 +56,7 @@ Create your own specialized agents tailored to specific domains, workflows, or b
 
 ### ChromaFlow Agent - Your Generalist AI Worker
 
-ChromaFlow Agent demonstrates the full capabilities of the Kortix platform as a versatile AI worker that can:
+ChromaFlow Agent demonstrates the full capabilities of the ChromaFlow platform as a versatile AI worker that can:
 
 **🔍 Research & Analysis**
 - Conduct comprehensive web research across multiple sources
@@ -90,7 +90,7 @@ ChromaFlow Agent demonstrates the full capabilities of the Kortix platform as a 
 
 ### Build Your Own Specialized Agents
 
-The Kortix platform enables you to create agents tailored to specific needs:
+The ChromaFlow platform enables you to create agents tailored to specific needs:
 
 **🎧 Customer Service Agents**
 - Handle support tickets and FAQ responses
@@ -128,7 +128,7 @@ Each agent can be configured with custom tools, workflows, knowledge bases, and 
 
 ![Architecture Diagram](docs/images/diagram.png)
 
-Kortix consists of four main components that work together to provide a complete AI agent development platform:
+ChromaFlow consists of four main components that work together to provide a complete AI agent development platform:
 
 ### 🔧 Backend API
 Python/FastAPI service that powers the agent platform with REST endpoints, thread management, agent orchestration, and LLM integration with Anthropic, OpenAI, and others via LiteLLM. Includes agent builder tools, workflow management, and extensible tool system.
@@ -144,11 +144,11 @@ Supabase-powered data layer handling authentication, user management, agent conf
 
 ## 🚀 Quick Start
 
-Get your Kortix platform running in minutes with our automated setup wizard:
+Get your ChromaFlow platform running in minutes with our automated setup wizard:
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/kortix-ai/suna.git
+git clone https://github.com/chromaflow-ai/suna.git
 cd suna
 ```
 
@@ -163,11 +163,11 @@ The wizard will guide you through 14 steps with progress saving, so you can resu
 python start.py
 ```
 
-That's it! Your Kortix platform will be running with ChromaFlow Agent ready to assist you.
+That's it! Your ChromaFlow platform will be running with ChromaFlow Agent ready to assist you.
 
 ## 🏠 Self-Hosting
 
-Kortix can be self-hosted on your own infrastructure using our comprehensive setup wizard, giving you complete control over your AI agent platform. For a complete guide to self-hosting Kortix, please refer to our [Self-Hosting Guide](./docs/SELF-HOSTING.md).
+ChromaFlow can be self-hosted on your own infrastructure using our comprehensive setup wizard, giving you complete control over your AI agent platform. For a complete guide to self-hosting ChromaFlow, please refer to our [Self-Hosting Guide](./docs/SELF-HOSTING.md).
 
 ### 🔧 Setup Process Includes
 
@@ -184,11 +184,11 @@ Kortix can be self-hosted on your own infrastructure using our comprehensive set
 
 For advanced users who prefer manual configuration, see the [Self-Hosting Guide](./docs/SELF-HOSTING.md) for detailed manual setup instructions.
 
-The wizard will guide you through all necessary steps to get your Kortix platform up and running. For detailed instructions, troubleshooting tips, and advanced configuration options, see the [Self-Hosting Guide](./docs/SELF-HOSTING.md).
+The wizard will guide you through all necessary steps to get your ChromaFlow platform up and running. For detailed instructions, troubleshooting tips, and advanced configuration options, see the [Self-Hosting Guide](./docs/SELF-HOSTING.md).
 
 ## 🤝 Contributing
 
-We welcome contributions from the community! Whether you're fixing bugs, adding features, or improving documentation, your help makes Kortix better for everyone.
+We welcome contributions from the community! Whether you're fixing bugs, adding features, or improving documentation, your help makes ChromaFlow better for everyone.
 
 Please see our [Contributing Guide](./CONTRIBUTING.md) for more details on:
 - How to set up your development environment
@@ -198,7 +198,7 @@ Please see our [Contributing Guide](./CONTRIBUTING.md) for more details on:
 
 ## 📄 License
 
-Kortix is licensed under the Apache License, Version 2.0. See [LICENSE](./LICENSE) for the full license text.
+ChromaFlow is licensed under the Apache License, Version 2.0. See [LICENSE](./LICENSE) for the full license text.
 
 ---
 
@@ -206,6 +206,6 @@ Kortix is licensed under the Apache License, Version 2.0. See [LICENSE](./LICENS
 
 **Ready to build your first AI agent?** 
 
-[Get Started](./docs/SELF-HOSTING.md) • [Join Discord](https://discord.gg/Py6pCBUUPw) • [Follow on Twitter](https://x.com/kortixai)
+[Get Started](./docs/SELF-HOSTING.md) • [Join Discord](https://discord.gg/Py6pCBUUPw) • [Follow on Twitter](https://x.com/chromaflowai)
 
 </div>

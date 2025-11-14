@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description:
-    'Kortix is a fully open source AI assistant that helps you accomplish real-world tasks with ease. Through natural conversation, Kortix becomes your digital companion for research, data analysis, and everyday challenges.',
+    'ChromaFlow is a fully open source AI assistant that helps you accomplish real-world tasks with ease. Through natural conversation, ChromaFlow becomes your digital companion for research, data analysis, and everyday challenges.',
   keywords: [
     'AI',
     'artificial intelligence',
@@ -45,11 +45,11 @@ export const metadata: Metadata = {
     'research',
     'data analysis',
   ],
-  authors: [{ name: 'Kortix Team', url: 'https://chromaflow-agent.so' }],
+  authors: [{ name: 'ChromaFlow Team', url: 'https://chromaflow-agent.so' }],
   creator:
-    'Kortix Team',
+    'ChromaFlow Team',
   publisher:
-    'Kortix Team',
+    'ChromaFlow Team',
   category: 'Technology',
   applicationName: 'ChromaFlow Agent',
   formatDetection: {
@@ -88,8 +88,8 @@ export const metadata: Metadata = {
     title: 'ChromaFlow Agent - Open Source Generalist AI Worker',
     description:
       'ChromaFlow Agent is a fully open source AI assistant that helps you accomplish real-world tasks with ease through natural conversation.',
-    creator: '@kortixai',
-    site: '@kortixai',
+    creator: '@chromaflowai',
+    site: '@chromaflowai',
     images: [
       {
         url: '/banner.png',

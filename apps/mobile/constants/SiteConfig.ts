@@ -13,18 +13,18 @@ export const siteConfig = {
     'research',
     'data analysis',
   ],
-  authors: [{ name: 'Kortix Team', url: 'https://suna.so' }],
-  creator: 'Kortix Team - Adam Cohen Hillel, Marko Kraemer, Domenico Gagliardi, and Quoc Dat Le',
-  publisher: 'Kortix Team - Adam Cohen Hillel, Marko Kraemer, Domenico Gagliardi, and Quoc Dat Le',
+  authors: [{ name: 'ChromaFlow Team', url: 'https://suna.so' }],
+  creator: 'ChromaFlow Team - Adam Cohen Hillel, Marko Kraemer, Domenico Gagliardi, and Quoc Dat Le',
+  publisher: 'ChromaFlow Team - Adam Cohen Hillel, Marko Kraemer, Domenico Gagliardi, and Quoc Dat Le',
   category: 'Technology',
   applicationName: 'Suna',
-  twitterHandle: '@kortixai',
-  githubUrl: 'https://github.com/kortix-ai/suna',
+  twitterHandle: '@chromaflowai',
+  githubUrl: 'https://github.com/chromaflow-ai/suna',
   
   // Mobile-specific configurations
   bundleId: {
-    ios: 'com.kortix.suna',
-    android: 'com.kortix.suna'
+    ios: 'com.chromaflow.suna',
+    android: 'com.chromaflow.suna'
   },
   
   // Theme colors

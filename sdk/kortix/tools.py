@@ -62,4 +62,4 @@ class AgentPressTools(str, Enum):
         return desc
 
 
-KortixTools = Union[AgentPressTools, MCPTools]
+ChromaFlowTools = Union[AgentPressTools, MCPTools]

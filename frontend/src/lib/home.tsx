@@ -58,17 +58,17 @@ export interface PricingTier {
 }
 
 export const siteConfig = {
-  name: 'Kortix ChromaFlow Agent',
+  name: 'ChromaFlow ChromaFlow Agent',
   description: 'The Generalist AI Worker that can act on your behalf.',
   cta: 'Start Free',
   url: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
   keywords: ['AI Worker', 'Generalist AI', 'Open Source AI', 'Autonomous Agent'],
   links: {
-    email: 'support@kortix.ai',
-    twitter: 'https://x.com/kortixai',
-    // discord: 'https://discord.gg/kortixai',
-    github: 'https://github.com/Kortix-ai/ChromaFlow Agent',
-    instagram: 'https://instagram.com/kortixai',
+    email: 'support@chromaflow.ai',
+    twitter: 'https://x.com/chromaflowai',
+    // discord: 'https://discord.gg/chromaflowai',
+    github: 'https://github.com/ChromaFlow-ai/ChromaFlow Agent',
+    instagram: 'https://instagram.com/chromaflowai',
   },
   nav: {
     links: [
@@ -108,10 +108,10 @@ export const siteConfig = {
       </svg>
     ),
     badge: '100% OPEN SOURCE',
-    githubUrl: 'https://github.com/kortix-ai/chromaflow-agent',
-    title: 'Kortix – Build, manage and train your AI Workforce.',
+    githubUrl: 'https://github.com/chromaflow-ai/chromaflow-agent',
+    title: 'ChromaFlow – Build, manage and train your AI Workforce.',
     description:
-      'Kortix – open-source platform to build, manage and train your AI Workforce.',
+      'ChromaFlow – open-source platform to build, manage and train your AI Workforce.',
     inputPlaceholder: 'Ask ChromaFlow Agent to...',
   },
   cloudPricingItems: [
@@ -499,15 +499,15 @@ export const siteConfig = {
     ],
   },
   featureSection: {
-    title: 'How Kortix ChromaFlow Agent Works',
+    title: 'How ChromaFlow ChromaFlow Agent Works',
     description:
-      'Discover how Kortix ChromaFlow Agent transforms your commands into action in four easy steps',
+      'Discover how ChromaFlow ChromaFlow Agent transforms your commands into action in four easy steps',
     items: [
       {
         id: 1,
         title: 'Request an Action',
         content:
-          'Speak or type your command—let Kortix ChromaFlow Agent capture your intent. Your request instantly sets the process in motion.',
+          'Speak or type your command—let ChromaFlow ChromaFlow Agent capture your intent. Your request instantly sets the process in motion.',
         image:
           'https://images.unsplash.com/photo-1720371300677-ba4838fa0678?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       },
@@ -538,9 +538,9 @@ export const siteConfig = {
     ],
   },
   bentoSection: {
-    title: 'Empower Your Workflow with Kortix ChromaFlow Agent',
+    title: 'Empower Your Workflow with ChromaFlow ChromaFlow Agent',
     description:
-      'Let Kortix ChromaFlow Agent act on your behalf with advanced AI capabilities, seamless integrations, and autonomous task execution.',
+      'Let ChromaFlow ChromaFlow Agent act on your behalf with advanced AI capabilities, seamless integrations, and autonomous task execution.',
     items: [
       {
         id: 1,
@@ -904,7 +904,7 @@ export const siteConfig = {
   },
   quoteSection: {
     quote:
-      'Kortix ChromaFlow Agent has transformed how we approach everyday tasks. The level of automation it provides, combined with its open source nature, makes it an invaluable tool for our entire organization.',
+      'ChromaFlow ChromaFlow Agent has transformed how we approach everyday tasks. The level of automation it provides, combined with its open source nature, makes it an invaluable tool for our entire organization.',
     author: {
       name: 'Alex Johnson',
       role: 'CTO, Innovatech',
@@ -914,7 +914,7 @@ export const siteConfig = {
   pricing: {
     title: 'Open Source & Free Forever',
     description:
-      'Kortix ChromaFlow Agent is 100% open source and free to use. No hidden fees, no premium features locked behind paywalls.',
+      'ChromaFlow ChromaFlow Agent is 100% open source and free to use. No hidden fees, no premium features locked behind paywalls.',
     pricingItems: [
       {
         name: 'Community',
@@ -1179,7 +1179,7 @@ export const siteConfig = {
   faqSection: {
     title: 'Frequently Asked Questions',
     description:
-      "Answers to common questions about Kortix ChromaFlow Agent and its capabilities. If you have any other questions, please don't hesitate to contact us.",
+      "Answers to common questions about ChromaFlow ChromaFlow Agent and its capabilities. If you have any other questions, please don't hesitate to contact us.",
     faQitems: [
       {
         id: 1,
@@ -1189,33 +1189,33 @@ export const siteConfig = {
       },
       {
         id: 2,
-        question: 'How does Kortix ChromaFlow Agent work?',
+        question: 'How does ChromaFlow ChromaFlow Agent work?',
         answer:
-          'Kortix ChromaFlow Agent works by analyzing your requirements, leveraging advanced AI algorithms to understand context, and executing tasks based on your instructions. It can integrate with your workflow, learn from feedback, and continuously improve its performance.',
+          'ChromaFlow ChromaFlow Agent works by analyzing your requirements, leveraging advanced AI algorithms to understand context, and executing tasks based on your instructions. It can integrate with your workflow, learn from feedback, and continuously improve its performance.',
       },
       {
         id: 3,
-        question: 'Is Kortix ChromaFlow Agent really free?',
+        question: 'Is ChromaFlow ChromaFlow Agent really free?',
         answer:
-          'Yes, Kortix ChromaFlow Agent is completely free and open source. We believe in democratizing AI technology and making it accessible to everyone. You can use it, modify it, and contribute to its development without any cost.',
+          'Yes, ChromaFlow ChromaFlow Agent is completely free and open source. We believe in democratizing AI technology and making it accessible to everyone. You can use it, modify it, and contribute to its development without any cost.',
       },
       {
         id: 4,
         question: 'Can I integrate ChromaFlow Agent with my existing tools?',
         answer:
-          'Yes, Kortix ChromaFlow Agent is designed to be highly compatible with popular tools and platforms. We offer APIs and pre-built integrations for seamless connection with your existing workflow tools and systems.',
+          'Yes, ChromaFlow ChromaFlow Agent is designed to be highly compatible with popular tools and platforms. We offer APIs and pre-built integrations for seamless connection with your existing workflow tools and systems.',
       },
       {
         id: 5,
-        question: 'How can I contribute to Kortix ChromaFlow Agent?',
+        question: 'How can I contribute to ChromaFlow ChromaFlow Agent?',
         answer:
-          'You can contribute to Kortix ChromaFlow Agent by submitting pull requests on GitHub, reporting bugs, suggesting new features, or helping with documentation. Join our Discord community to connect with other contributors and Hire ChromaFlow Agent.',
+          'You can contribute to ChromaFlow ChromaFlow Agent by submitting pull requests on GitHub, reporting bugs, suggesting new features, or helping with documentation. Join our Discord community to connect with other contributors and Hire ChromaFlow Agent.',
       },
       {
         id: 6,
-        question: 'How does Kortix ChromaFlow Agent save me time?',
+        question: 'How does ChromaFlow ChromaFlow Agent save me time?',
         answer:
-          'Kortix ChromaFlow Agent automates repetitive tasks, streamlines workflows, and provides quick solutions to common challenges. This automation and efficiency can save hours of manual work, allowing you to focus on more strategic activities.',
+          'ChromaFlow ChromaFlow Agent automates repetitive tasks, streamlines workflows, and provides quick solutions to common challenges. This automation and efficiency can save hours of manual work, allowing you to focus on more strategic activities.',
       },
     ],
   },
@@ -1231,11 +1231,11 @@ export const siteConfig = {
   },
   footerLinks: [
     {
-      title: 'Kortix',
+      title: 'ChromaFlow',
       links: [
-        { id: 1, title: 'About', url: 'https://kortix.ai' },
-        { id: 3, title: 'Contact', url: 'mailto:hey@kortix.ai' },
-        { id: 4, title: 'Careers', url: 'https://kortix.ai/careers' },
+        { id: 1, title: 'About', url: 'https://chromaflow.ai' },
+        { id: 3, title: 'Contact', url: 'mailto:hey@chromaflow.ai' },
+        { id: 4, title: 'Careers', url: 'https://chromaflow.ai/careers' },
       ],
     },
     {
@@ -1244,10 +1244,10 @@ export const siteConfig = {
         {
           id: 5,
           title: 'Documentation',
-          url: 'https://github.com/Kortix-ai/ChromaFlow Agent',
+          url: 'https://github.com/ChromaFlow-ai/ChromaFlow Agent',
         },
         { id: 7, title: 'Discord', url: 'https://discord.gg/Py6pCBUUPw' },
-        { id: 8, title: 'GitHub', url: 'https://github.com/Kortix-ai/ChromaFlow Agent' },
+        { id: 8, title: 'GitHub', url: 'https://github.com/ChromaFlow-ai/ChromaFlow Agent' },
       ],
     },
     {
@@ -1266,7 +1266,7 @@ export const siteConfig = {
         {
           id: 11,
           title: 'License Apache 2.0',
-          url: 'https://github.com/Kortix-ai/ChromaFlow Agent/blob/main/LICENSE',
+          url: 'https://github.com/ChromaFlow-ai/ChromaFlow Agent/blob/main/LICENSE',
         },
       ],
     },
