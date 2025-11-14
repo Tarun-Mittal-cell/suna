@@ -80,7 +80,7 @@ export function ThreadComponent({ projectId, threadId, compact = false, configur
     setSelectedAgent,
     initializeFromAgents,
     getCurrentAgent,
-    isSunaAgent,
+    isChromaFlow AgentAgent,
   } = useAgentSelection();
 
   const { data: agentsResponse } = useAgents();
@@ -714,7 +714,7 @@ export function ThreadComponent({ projectId, threadId, compact = false, configur
   // SEO title update
   useEffect(() => {
     if (projectName) {
-      document.title = `${projectName} | Kortix Suna`;
+      document.title = `${projectName} | Kortix ChromaFlow Agent`;
 
       const metaDescription = document.querySelector(
         'meta[name="description"]',
@@ -722,13 +722,13 @@ export function ThreadComponent({ projectId, threadId, compact = false, configur
       if (metaDescription) {
         metaDescription.setAttribute(
           'content',
-          `${projectName} - Interactive agent conversation powered by Kortix Suna`,
+          `${projectName} - Interactive agent conversation powered by Kortix ChromaFlow Agent`,
         );
       }
 
       const ogTitle = document.querySelector('meta[property="og:title"]');
       if (ogTitle) {
-        ogTitle.setAttribute('content', `${projectName} | Kortix Suna`);
+        ogTitle.setAttribute('content', `${projectName} | Kortix ChromaFlow Agent`);
       }
 
       const ogDescription = document.querySelector(
@@ -758,7 +758,7 @@ export function ThreadComponent({ projectId, threadId, compact = false, configur
     ) {
       hasCheckedUpgradeDialog.current = true;
       const hasSeenUpgradeDialog = localStorage.getItem(
-        'suna_upgrade_dialog_displayed',
+        'chromaflow-agent_upgrade_dialog_displayed',
       );
       const isFreeTier = subscriptionStatus === 'no_subscription';
       if (!hasSeenUpgradeDialog && isFreeTier && !isLocalMode()) {
@@ -769,7 +769,7 @@ export function ThreadComponent({ projectId, threadId, compact = false, configur
 
   const handleDismissUpgradeDialog = () => {
     setShowUpgradeDialog(false);
-    localStorage.setItem('suna_upgrade_dialog_displayed', 'true');
+    localStorage.setItem('chromaflow-agent_upgrade_dialog_displayed', 'true');
   };
 
   useEffect(() => {

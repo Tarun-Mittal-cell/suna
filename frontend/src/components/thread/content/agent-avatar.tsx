@@ -20,7 +20,7 @@ interface AgentAvatarProps {
   iconColor?: string;
   backgroundColor?: string;
   agentName?: string;
-  isSunaDefault?: boolean;
+  isChromaFlow AgentDefault?: boolean;
   
   // Common props
   size?: number;
@@ -31,14 +31,14 @@ export const AgentAvatar: React.FC<AgentAvatarProps> = ({
   // Agent data props
   agent: propAgent,
   agentId, 
-  fallbackName = "Suna",
+  fallbackName = "ChromaFlow Agent",
   
   // Direct props
   iconName: propIconName,
   iconColor: propIconColor,
   backgroundColor: propBackgroundColor,
   agentName: propAgentName,
-  isSunaDefault: propIsSunaDefault,
+  isChromaFlow AgentDefault: propIsChromaFlow AgentDefault,
   
   // Common props
   size = 16, 
@@ -53,7 +53,7 @@ export const AgentAvatar: React.FC<AgentAvatarProps> = ({
   const iconColor = propIconColor ?? agent?.icon_color ?? '#000000';
   const backgroundColor = propBackgroundColor ?? agent?.icon_background ?? '#F3F4F6';
   const agentName = propAgentName ?? agent?.name ?? fallbackName;
-  const isSuna = propIsSunaDefault ?? agent?.metadata?.is_suna_default;
+  const isChromaFlow Agent = propIsChromaFlow AgentDefault ?? agent?.metadata?.is_chromaflow-agent_default;
 
   // Calculate responsive border radius - proportional to size
   // Use a ratio that prevents full rounding while maintaining nice corners
@@ -62,7 +62,7 @@ export const AgentAvatar: React.FC<AgentAvatarProps> = ({
   };
 
   // Show skeleton when no data is available
-  if (!agent && !propIconName && !propIsSunaDefault && agentId) {
+  if (!agent && !propIconName && !propIsChromaFlow AgentDefault && agentId) {
     return (
       <div 
         className={cn("bg-muted animate-pulse border", className)}
@@ -71,7 +71,7 @@ export const AgentAvatar: React.FC<AgentAvatarProps> = ({
     );
   }
 
-  if (isSuna) {
+  if (isChromaFlow Agent) {
     return (
       <div 
         className={cn(
@@ -135,7 +135,7 @@ interface AgentNameProps {
 export const AgentName: React.FC<AgentNameProps> = ({ 
   agent: propAgent,
   agentId, 
-  fallback = "Suna" 
+  fallback = "ChromaFlow Agent" 
 }) => {
   const cachedAgent = useAgentFromCache(!propAgent && agentId ? agentId : undefined);
   const agent = propAgent || cachedAgent;
@@ -148,4 +148,4 @@ export function hasCustomProfile(agent: {
   icon_name?: string | null;
 }): boolean {
   return !!(agent.icon_name);
-} 
+}  

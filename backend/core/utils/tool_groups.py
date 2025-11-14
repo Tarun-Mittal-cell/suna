@@ -661,7 +661,7 @@ TOOL_GROUPS: Dict[str, ToolGroup] = {
     "agent_creation_tool": ToolGroup(
         name="agent_creation_tool",
         display_name="Agent Creation",
-        description="Create new agents (Suna only)",
+        description="Create new agents (ChromaFlow Agent only)",
         tool_class="AgentCreationTool",
         methods=[
             ToolMethod(

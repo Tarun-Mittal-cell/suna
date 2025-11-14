@@ -19,8 +19,8 @@ export default function ContributingPage() {
   return (
     <>
       <DocsHeader
-        title="Contributing to Suna"
-        description="Help make Suna better for everyone! We welcome contributions from the community"
+        title="Contributing to ChromaFlow Agent"
+        description="Help make ChromaFlow Agent better for everyone! We welcome contributions from the community"
         breadcrumbs={breadcrumbs}
         lastUpdated="August 2025"
         showSeparator
@@ -229,7 +229,7 @@ export default function ContributingPage() {
               { 
                 label: 'View Discussions', 
                 variant: 'default',
-                onClick: () => window.open('https://github.com/kortix-ai/suna/issues', '_blank')
+                onClick: () => window.open('https://github.com/kortix-ai/chromaflow-agent/issues', '_blank')
               }
             ]}
           />

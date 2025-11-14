@@ -50,7 +50,7 @@ class AgentData:
     version_created_by: Optional[str] = None
     
     # Metadata flags
-    is_suna_default: bool = False
+    is_chromaflow_agent_default: bool = False
     centrally_managed: bool = False
     config_loaded: bool = False
     restrictions: Optional[Dict[str, Any]] = None
@@ -130,7 +130,7 @@ class AgentData:
                 "agentpress_tools": self.agentpress_tools,
                 "triggers": self.triggers,
                 "version_name": self.version_name,
-                "is_suna_default": self.is_suna_default,
+                "is_chromaflow_agent_default": self.is_chromaflow_agent_default,
                 "centrally_managed": self.centrally_managed,
                 "restrictions": self.restrictions,
             })
@@ -297,7 +297,7 @@ class AgentLoader:
             agentpress_tools=template_row.get('agentpress_tools', {}),
             triggers=[],
             version_name='template',
-            is_suna_default=False,
+            is_chromaflow_agent_default=False,
             centrally_managed=False,
             config_loaded=True,  # Templates have config built-in
             restrictions={}
@@ -325,22 +325,22 @@ class AgentLoader:
             current_version_id=row.get('current_version_id'),
             version_count=row.get('version_count', 1),
             metadata=metadata,
-            is_suna_default=metadata.get('is_suna_default', False),
+            is_chromaflow_agent_default=metadata.get('is_chromaflow_agent_default', False),
             config_loaded=False
         )
     
     async def _load_agent_config(self, agent: AgentData, user_id: str):
         """Load full configuration for a single agent."""
-        if agent.is_suna_default:
-            self._load_suna_config(agent)
+        if agent.is_chromaflow_agent_default:
+            self._load_chromaflow_agent_config(agent)
         else:
             await self._load_custom_config(agent, user_id)
         
         agent.config_loaded = True
     
-    def _load_suna_config(self, agent: AgentData):
-        """Load Suna central configuration."""
-        from core.suna_config import SUNA_CONFIG
+    def _load_chromaflow_agent_config(self, agent: AgentData):
+        """Load ChromaFlow Agent central configuration."""
+        from core.chromaflow_agent_config import SUNA_CONFIG
         from core.config_helper import _extract_agentpress_tools_for_run
         
         agent.system_prompt = SUNA_CONFIG['system_prompt']
@@ -433,7 +433,7 @@ class AgentLoader:
         from core.utils.query_utils import batch_query_in
         
         # Get all version IDs
-        version_ids = [a.current_version_id for a in agents if a.current_version_id and not a.is_suna_default]
+        version_ids = [a.current_version_id for a in agents if a.current_version_id and not a.is_chromaflow_agent_default]
         
         if not version_ids:
             return
@@ -453,8 +453,8 @@ class AgentLoader:
             
             # Apply configs
             for agent in agents:
-                if agent.is_suna_default:
-                    self._load_suna_config(agent)
+                if agent.is_chromaflow_agent_default:
+                    self._load_chromaflow_agent_config(agent)
                     agent.config_loaded = True
                 elif agent.agent_id in version_map:
                     self._apply_version_config(agent, version_map[agent.agent_id])

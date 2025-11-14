@@ -24,7 +24,7 @@ interface GranularToolConfigurationProps {
   tools: Record<string, any>;
   onToolsChange: (tools: Record<string, any>) => void;
   disabled?: boolean;
-  isSunaAgent?: boolean;
+  isChromaFlow AgentAgent?: boolean;
   isLoading?: boolean;
 }
 
@@ -32,7 +32,7 @@ export const GranularToolConfiguration = ({
   tools, 
   onToolsChange, 
   disabled = false, 
-  isSunaAgent = false, 
+  isChromaFlow AgentAgent = false, 
   isLoading = false 
 }: GranularToolConfigurationProps) => {
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -85,9 +85,9 @@ export const GranularToolConfiguration = ({
       return;
     }
     
-    if (disabled && isSunaAgent) {
+    if (disabled && isChromaFlow AgentAgent) {
       toast.error("Tools cannot be modified", {
-        description: "Suna's default tools are managed centrally and cannot be changed.",
+        description: "ChromaFlow Agent's default tools are managed centrally and cannot be changed.",
       });
       return;
     }
@@ -134,9 +134,9 @@ export const GranularToolConfiguration = ({
       return;
     }
     
-    if (disabled && isSunaAgent) {
+    if (disabled && isChromaFlow AgentAgent) {
       toast.error("Methods cannot be modified", {
-        description: "Suna's default tool methods are managed centrally and cannot be changed.",
+        description: "ChromaFlow Agent's default tool methods are managed centrally and cannot be changed.",
       });
       return;
     }

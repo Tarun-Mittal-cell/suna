@@ -4,21 +4,21 @@ from core.services.supabase import DBConnection
 from datetime import datetime, timezone
 
 
-class SunaDefaultAgentService:
-    """Simplified Suna agent management service."""
+class ChromaFlow AgentDefaultAgentService:
+    """Simplified ChromaFlow Agent agent management service."""
     
     def __init__(self, db: DBConnection = None):
         self._db = db or DBConnection()
-        logger.debug("🔄 SunaDefaultAgentService initialized (simplified)")
+        logger.debug("🔄 ChromaFlow AgentDefaultAgentService initialized (simplified)")
     
-    async def get_suna_default_config(self) -> Dict[str, Any]:
-        """Get the current Suna configuration."""
-        from core.suna_config import SUNA_CONFIG
+    async def get_chromaflow_agent_default_config(self) -> Dict[str, Any]:
+        """Get the current ChromaFlow Agent configuration."""
+        from core.chromaflow_agent_config import SUNA_CONFIG
         return SUNA_CONFIG.copy()
     
     async def install_for_all_users(self) -> Dict[str, Any]:
-        """Install Suna agent for all users who don't have one."""
-        logger.debug("🚀 Installing Suna agents for users who don't have them")
+        """Install ChromaFlow Agent agent for all users who don't have one."""
+        logger.debug("🚀 Installing ChromaFlow Agent agents for users who don't have them")
         
         try:
             client = await self._db.client
@@ -27,21 +27,21 @@ class SunaDefaultAgentService:
             accounts_result = await client.schema('basejump').table('accounts').select('id').eq('personal_account', True).execute()
             all_account_ids = {row['id'] for row in accounts_result.data} if accounts_result.data else set()
             
-            # Get existing Suna agents
-            existing_result = await client.table('agents').select('account_id').eq('metadata->>is_suna_default', 'true').execute()
+            # Get existing ChromaFlow Agent agents
+            existing_result = await client.table('agents').select('account_id').eq('metadata->>is_chromaflow_agent_default', 'true').execute()
             existing_account_ids = {row['account_id'] for row in existing_result.data} if existing_result.data else set()
             
-            # Find accounts without Suna
+            # Find accounts without ChromaFlow Agent
             missing_accounts = all_account_ids - existing_account_ids
             
             if not missing_accounts:
                 return {
                     "installed_count": 0,
                     "failed_count": 0,
-                    "details": ["All users already have Suna agents"]
+                    "details": ["All users already have ChromaFlow Agent agents"]
                 }
             
-            logger.debug(f"📦 Installing Suna for {len(missing_accounts)} users")
+            logger.debug(f"📦 Installing ChromaFlow Agent for {len(missing_accounts)} users")
             
             success_count = 0
             failed_count = 0
@@ -49,9 +49,9 @@ class SunaDefaultAgentService:
             
             for account_id in missing_accounts:
                 try:
-                    await self._create_suna_agent_for_user(account_id)
+                    await self._create_chromaflow_agent_agent_for_user(account_id)
                     success_count += 1
-                    logger.debug(f"✅ Installed Suna for user {account_id}")
+                    logger.debug(f"✅ Installed ChromaFlow Agent for user {account_id}")
                 except Exception as e:
                     failed_count += 1
                     error_msg = f"Failed to install for user {account_id}: {str(e)}"
@@ -73,15 +73,15 @@ class SunaDefaultAgentService:
                 "details": [error_msg]
             }
     
-    async def install_suna_agent_for_user(self, account_id: str, replace_existing: bool = False) -> Optional[str]:
-        """Install Suna agent for a specific user."""
-        logger.debug(f"🔄 Installing Suna agent for user: {account_id}")
+    async def install_chromaflow_agent_agent_for_user(self, account_id: str, replace_existing: bool = False) -> Optional[str]:
+        """Install ChromaFlow Agent agent for a specific user."""
+        logger.debug(f"🔄 Installing ChromaFlow Agent agent for user: {account_id}")
         
         try:
             client = await self._db.client
             
-            # Check for existing Suna agent
-            existing_result = await client.table('agents').select('agent_id').eq('account_id', account_id).eq('metadata->>is_suna_default', 'true').execute()
+            # Check for existing ChromaFlow Agent agent
+            existing_result = await client.table('agents').select('agent_id').eq('account_id', account_id).eq('metadata->>is_chromaflow_agent_default', 'true').execute()
             
             if existing_result.data:
                 existing_agent_id = existing_result.data[0]['agent_id']
@@ -89,48 +89,48 @@ class SunaDefaultAgentService:
                 if replace_existing:
                     # Delete existing agent
                     await self._delete_agent(existing_agent_id)
-                    logger.debug(f"Deleted existing Suna agent for replacement")
+                    logger.debug(f"Deleted existing ChromaFlow Agent agent for replacement")
                 else:
-                    logger.debug(f"User {account_id} already has Suna agent: {existing_agent_id}")
+                    logger.debug(f"User {account_id} already has ChromaFlow Agent agent: {existing_agent_id}")
                     return existing_agent_id
 
             # Create new agent
-            agent_id = await self._create_suna_agent_for_user(account_id)
-            logger.debug(f"Successfully installed Suna agent {agent_id} for user {account_id}")
+            agent_id = await self._create_chromaflow_agent_agent_for_user(account_id)
+            logger.debug(f"Successfully installed ChromaFlow Agent agent {agent_id} for user {account_id}")
             return agent_id
                 
         except Exception as e:
-            logger.error(f"Error in install_suna_agent_for_user: {e}")
+            logger.error(f"Error in install_chromaflow_agent_agent_for_user: {e}")
             return None
     
-    async def get_suna_agent_stats(self) -> Dict[str, Any]:
-        """Get statistics about Suna agents."""
+    async def get_chromaflow_agent_agent_stats(self) -> Dict[str, Any]:
+        """Get statistics about ChromaFlow Agent agents."""
         try:
             client = await self._db.client
             
             # Get total count
-            total_result = await client.table('agents').select('agent_id', count='exact').eq('metadata->>is_suna_default', 'true').execute()
+            total_result = await client.table('agents').select('agent_id', count='exact').eq('metadata->>is_chromaflow_agent_default', 'true').execute()
             total_count = total_result.count or 0
             
             # Get creation dates for last 30 days
             from datetime import timedelta
             thirty_days_ago = (datetime.now(timezone.utc) - timedelta(days=30)).isoformat()
-            recent_result = await client.table('agents').select('created_at').eq('metadata->>is_suna_default', 'true').gte('created_at', thirty_days_ago).execute()
+            recent_result = await client.table('agents').select('created_at').eq('metadata->>is_chromaflow_agent_default', 'true').gte('created_at', thirty_days_ago).execute()
             recent_count = len(recent_result.data) if recent_result.data else 0
             
             return {
                 "total_agents": total_count,
                 "recent_installs": recent_count,
-                "note": "Suna agents always use current central configuration"
+                "note": "ChromaFlow Agent agents always use current central configuration"
             }
             
         except Exception as e:
             logger.error(f"Failed to get agent stats: {e}")
             return {"error": str(e)}
     
-    async def _create_suna_agent_for_user(self, account_id: str) -> str:
-        """Create a Suna agent for a user."""
-        from core.suna_config import SUNA_CONFIG
+    async def _create_chromaflow_agent_agent_for_user(self, account_id: str) -> str:
+        """Create a ChromaFlow Agent agent for a user."""
+        from core.chromaflow_agent_config import SUNA_CONFIG
         
         client = await self._db.client
         
@@ -144,7 +144,7 @@ class SunaDefaultAgentService:
             "icon_color": "#F59E0B",
             "icon_background": "#FFF3CD",
             "metadata": {
-                "is_suna_default": True,
+                "is_chromaflow_agent_default": True,
                 "centrally_managed": True,
                 "installation_date": datetime.now(timezone.utc).isoformat()
             },
@@ -164,10 +164,10 @@ class SunaDefaultAgentService:
         return agent_id
     
     async def _create_initial_version(self, agent_id: str, account_id: str) -> None:
-        """Create initial version for Suna agent."""
+        """Create initial version for ChromaFlow Agent agent."""
         try:
             from core.versioning.version_service import get_version_service
-            from core.suna_config import SUNA_CONFIG
+            from core.chromaflow_agent_config import SUNA_CONFIG
             
             version_service = await get_version_service()
             await version_service.create_version(
@@ -179,13 +179,13 @@ class SunaDefaultAgentService:
                 agentpress_tools=SUNA_CONFIG["agentpress_tools"],
                 model=SUNA_CONFIG["model"],
                 version_name="v1",
-                change_description="Initial Suna agent installation"
+                change_description="Initial ChromaFlow Agent agent installation"
             )
             
-            logger.debug(f"Created initial version for Suna agent {agent_id}")
+            logger.debug(f"Created initial version for ChromaFlow Agent agent {agent_id}")
             
         except Exception as e:
-            logger.error(f"Failed to create initial version for Suna agent {agent_id}: {e}")
+            logger.error(f"Failed to create initial version for ChromaFlow Agent agent {agent_id}: {e}")
             raise
     
     async def _delete_agent(self, agent_id: str) -> bool:
